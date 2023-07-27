@@ -97,15 +97,15 @@ if button1:
     sourceLinks = df['Link gốc'].values
     affLinks = []
     for x in sourceLinks:
-        print(x)
+        st.write(x)
         todayDate = date.today()
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
-        print(ts)
+        st.write(ts)
         utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
-        print(utmContent)
+        st.write(utmContent)
         res = sa.generateShortLink(x, utmContent, option)
-        print(res)
+        st.write(res)
         affLinks.append(res)
         
     for i, prod in enumerate(df.index):
