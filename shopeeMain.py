@@ -14,6 +14,10 @@ import pyperclip
 appid = "17318220053" # Your appid
 secret = "VQQEHZVTZS5ETDUI2KFHSFPW6YTCBCES" # Your secret
 
+st.set_page_config(
+        page_title='Tạo Link Shopee Affiliate',
+        page_icon="😍"                  
+        )
 
 data = []
 # report yesterday
@@ -22,7 +26,7 @@ enddate = datetime.now() - timedelta(days=2)
 
 # Khai báo client ID và client secret key
 creds = service_account.Credentials.from_service_account_file(
-    './shopee-a-5c7a7ee72e9c.json')
+    'shopee-a-5c7a7ee72e9c.json')
 
 # Xác thực và đăng nhập vào tài khoản Google
 service = build('sheets', 'v4', credentials=creds)
