@@ -121,7 +121,7 @@ if button1:
         str1 = str1 + cmtContent
     
     text_to_be_copied = str1
-    pyperclip.copy(text_to_be_copied)
+    # pyperclip.copy(text_to_be_copied)
 
     print (str1)
     st.write(str1)
