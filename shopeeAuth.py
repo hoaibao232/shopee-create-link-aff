@@ -32,7 +32,7 @@ class ShopeeAffiliate():
             'https://open-api.affiliate.shopee.vn/graphql',
             headers=headers,
             json=payload,
-            timeout=10
+            timeout=20
         )
         return response.json()
 

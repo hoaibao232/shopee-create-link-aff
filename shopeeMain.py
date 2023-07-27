@@ -104,7 +104,10 @@ if button1:
         print(ts)
         utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
         print(utmContent)
-        res = sa.generateShortLink(x, utmContent, option)
+        if "lazada" in x:
+            res = "Hãy gửi link Shopee thay vì Lazada"
+        else:
+            res = sa.generateShortLink(x, utmContent, option)
         print(res)
         affLinks.append(res)
         
@@ -116,7 +119,7 @@ if button1:
     str1=""
     for element in arrayData:
         cmtContent = element[1] + element[0] + "\n\n"
-        cmtContent = cmtContent.replace("\n","  \n ")
+        cmtContent = cmtContent.replace("\n","  \n")
         print (cmtContent)
         str1 = str1 + cmtContent
     
@@ -124,8 +127,8 @@ if button1:
     # pyperclip.copy(text_to_be_copied)
 
     print (str1)
-    st.write(str1)
-    st.code(str1, language="python", line_numbers=False)
+    # st.write(str1)
+    st.code(str1, language="csv", line_numbers=False)
 
 
 
