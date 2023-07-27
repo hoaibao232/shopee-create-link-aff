@@ -167,9 +167,9 @@ if button2:
         str11 = str11 + cmtContent
     
     text_to_be_copied = str11
-    pyperclip.copy(text_to_be_copied)
+    # pyperclip.copy(text_to_be_copied)
 
     print (str11)
-    st.write(str11)
+    st.code(str11, language="csv", line_numbers=False)
 
 st.dataframe(df, use_container_width=True)
