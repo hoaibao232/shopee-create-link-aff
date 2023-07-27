@@ -1,1 +1,2 @@
 git+https://github.com/googleapis/google-auth-library-python-httplib2
+git+https://github.com/googleapis/google-api-python-client
