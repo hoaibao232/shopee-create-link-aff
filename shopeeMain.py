@@ -47,10 +47,10 @@ for row in result.get('values', []):
 
 data = data[1:]
 
-sa1 = ShopeeAffiliate(appid, secret)
-res1 = sa1.report(startdate, enddate)
-conversion, estimation, startdate_, enddate_ = res1
-st.write("Doanh thu uoc tinh:", estimation)
+# sa1 = ShopeeAffiliate(appid, secret)
+# res1 = sa1.report(startdate, enddate)
+# conversion, estimation, startdate_, enddate_ = res1
+# st.write("Doanh thu uoc tinh:", estimation)
 
 # res = sa.generateShortLink("https://shopee.vn/shop/114077203", "BAO", "BIDA")
 # print (res)
@@ -97,15 +97,15 @@ if button1:
     sourceLinks = df['Link gốc'].values
     affLinks = []
     for x in sourceLinks:
-        st.write(x)
+        print(x)
         todayDate = date.today()
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
-        st.write(ts)
+        print(ts)
         utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
-        st.write(utmContent)
+        print(utmContent)
         res = sa.generateShortLink(x, utmContent, option)
-        st.write(res)
+        print(res)
         affLinks.append(res)
         
     for i, prod in enumerate(df.index):
@@ -125,6 +125,9 @@ if button1:
 
     print (str1)
     st.write(str1)
+    st.code(str1, language="python", line_numbers=False)
+
+
 
 if button2:
     sa = ShopeeAffiliate(appid, secret)
