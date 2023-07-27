@@ -47,11 +47,10 @@ for row in result.get('values', []):
 
 data = data[1:]
 
-# res = sa.report(startdate, enddate)
-# conversion, estimation, startdate_, enddate_ = res
-# print("Thoi gian: {} sampai {}".format(startdate_, enddate_))
-# print("So don hang:", conversion)
-# print("Doanh thu uoc tinh:", estimation)
+sa1 = ShopeeAffiliate(appid, secret)
+res1 = sa1.report(startdate, enddate)
+conversion, estimation, startdate_, enddate_ = res1
+st.write("Doanh thu uoc tinh:", estimation)
 
 # res = sa.generateShortLink("https://shopee.vn/shop/114077203", "BAO", "BIDA")
 # print (res)
