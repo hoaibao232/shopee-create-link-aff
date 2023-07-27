@@ -10,14 +10,23 @@ import numpy as np
 import pyperclip
 
 
-
-appid = "17318220053" # Your appid
-secret = "VQQEHZVTZS5ETDUI2KFHSFPW6YTCBCES" # Your secret
-
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
         page_icon="😍"                  
         )
+
+appid = "17318220053" # Your appid
+appid = st.selectbox(
+    'Tài khoản Shopee',
+    ['17318220053', '17328650055', '17380760085'])
+if appid == "17318220053":
+    secret = "VQQEHZVTZS5ETDUI2KFHSFPW6YTCBCES"
+elif appid == "17328650055":
+    secret = "6AKO5VRGDUWBPDP5EIG7PP4E6W5VOBJL"
+elif appid == "17380760085":
+    secret = "F6QVZQDUBMOI57X74Q55U5U2EJ7HYPG3"
+
+
 
 data = []
 # report yesterday
