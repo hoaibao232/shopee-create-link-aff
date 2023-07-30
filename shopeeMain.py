@@ -8,6 +8,7 @@ import pandas as pd
 import random
 import numpy as np
 import pyperclip
+from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, ColumnsAutoSizeMode
 
 
 st.set_page_config(
@@ -15,10 +16,19 @@ st.set_page_config(
         page_icon="😍"                  
         )
 
+taskPeople = st.selectbox(
+    'Người làm',
+    ['BAO', 'LUT', 'VAN'])
+
 appid = "17318220053" # Your appid
 appid = st.selectbox(
     'Tài khoản Shopee',
     ['17318220053', '17328650055', '17380760085'])
+
+# ATid = st.selectbox(
+#     'Tài khoản AT Lazada',
+#     ['Bao', 'Van', 'Lut'])
+
 if appid == "17318220053":
     secret = "VQQEHZVTZS5ETDUI2KFHSFPW6YTCBCES"
 elif appid == "17328650055":
@@ -26,9 +36,16 @@ elif appid == "17328650055":
 elif appid == "17380760085":
     secret = "F6QVZQDUBMOI57X74Q55U5U2EJ7HYPG3"
 
+# if ATid == "Bao":
+#     accessKey = "rtFpJnRsPYs9A4edyv2UAHRQxP20Lq4A"
+# elif ATid == "Lut":
+#     accessKey = "GVR5cejXtxeUkDzlTsqH6aJOYx9yt1Ae"
+# elif ATid == "Van":
+#     accessKey = "jZGjKwszHSHBmo-HAkq9NUmjxMJZ1mqf"
 
 
 data = []
+selectedLinks = []
 # report yesterday
 startdate = datetime.now() - timedelta(days=5)
 enddate = datetime.now() - timedelta(days=2)
@@ -76,9 +93,7 @@ option = st.selectbox(
     'Chọn loại sản phẩm',
     category)
 
-taskPeople = st.selectbox(
-    'Người làm',
-    ['BAO', 'LUT', 'VAN'])
+
 
 customLinks = st.text_area('Custom Link', '', key="text")
 
@@ -87,13 +102,18 @@ def clear_text():
 
 df = df.loc[df['Category'] == option]
 
-col1, col2, col3,col4,col5 = st.columns(5)
+col1, col2, col3 = st.columns(3)
 
 with col1:
-    button1 = st.button('Tạo', on_click=clear_text)
+    button1 = st.button('Tạo Link random', on_click=clear_text)
 
-with col5:
+with col3:
     button2 = st.button('Custom Link')
+
+with col2:
+    button3 = st.button('Tạo Link đã chọn', on_click=clear_text)
+
+c = st.container()
 
 if button1:
     texttt = st.empty()
@@ -114,7 +134,7 @@ if button1:
         utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
         print(utmContent)
         if "lazada" in x:
-            res = "Hãy gửi link Shopee thay vì Lazada"
+            res = ""
         else:
             res = sa.generateShortLink(x, utmContent, option)
         print(res)
@@ -172,4 +192,65 @@ if button2:
     print (str11)
     st.code(str11, language="csv", line_numbers=False)
 
-st.dataframe(df, use_container_width=True)
+
+# select the columns you want the users to see
+gb = GridOptionsBuilder.from_dataframe(df)
+# configure selection
+gb.configure_selection(selection_mode="multiple", use_checkbox=True)
+gb.configure_side_bar()
+gridOptions = gb.build()
+
+data = AgGrid(df,
+              gridOptions=gridOptions,
+              enable_enterprise_modules=True,
+              allow_unsafe_jscode=True,
+              update_mode=GridUpdateMode.SELECTION_CHANGED,
+              columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS)
+
+affLinks1 = []
+commentCaption =[]
+str11 = ""
+if button3:
+    texttt = st.empty()
+    sa = ShopeeAffiliate(appid, secret)
+    for index, element in enumerate(data['selected_rows']):
+        srcLink = data['selected_rows'][index]['Link gốc']
+        cmtCapt = data['selected_rows'][index]['Comment']
+        commentCaption.append(cmtCapt)
+        selectedLinks.append(srcLink)
+
+    for x in selectedLinks:
+        print(x)
+        todayDate = date.today()
+        dt = datetime.now()
+        ts = round(datetime.timestamp(dt))
+        print(ts)
+        utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
+        print(utmContent)
+        if "lazada" in x:
+            res = ""
+        else:
+            res = sa.generateShortLink(x, utmContent, option)
+        print(res)
+        affLinks1.append(res)
+
+    print(affLinks1)
+    # print(df)
+        
+    # for i, prod in enumerate(df.index):
+    #     df.iloc[i, 3] = affLinks1[i]
+        
+    for i in range(len(affLinks1)):
+        cmtContent = commentCaption[i] + affLinks1[i] + "\n\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str11 = str11 + cmtContent
+
+    print (str11)
+    with c:
+        st.code(str11, language="csv", line_numbers=False)
+
+
+
+              
+# st.dataframe(df, use_container_width=True)

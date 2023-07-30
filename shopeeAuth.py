@@ -36,6 +36,16 @@ class ShopeeAffiliate():
         )
         return response.json()
 
+    def reqAT(self, payload={}):
+        headers = self.header(payload)
+        response = requests.post(
+            'https://api.accesstrade.vn/v1/product_link/create',
+            headers=headers,
+            json=payload,
+            timeout=20
+        )
+        return response.json()
+
     def generateShortLink(self, url, account, sosmed):
         keys=["{}".format(sosmed), "{}".format(account)]
         payload = {
@@ -44,6 +54,15 @@ class ShopeeAffiliate():
         }
         res = self.req(payload)
         return res['data']['generateShortLink']['shortLink']
+
+    # def generateShortLinkAT(self, url, account, sosmed):
+    #     keys=["{}".format(sosmed), "{}".format(account)]
+    #     payload = {
+    #         "query": 'mutation {  generateShortLink(input: {originUrl: "%s", subIds: %s}) { shortLink } }' %
+    #         (url, json.dumps(keys))
+    #     }
+    #     res = self.req(payload)
+    #     return res['data']['generateShortLink']['shortLink']
 
     def _report_(self, start: datetime = None, end: datetime = None, scrollId="", status=STATUS_ALL):
         start = start.replace(hour=0, minute=0, second=0, microsecond=0)
