@@ -46,8 +46,8 @@ class ShopeeAffiliate():
         )
         return response.json()
 
-    def generateShortLink(self, url, account, sosmed):
-        keys=["{}".format(sosmed), "{}".format(account)]
+    def generateShortLink(self, url, account, sosmed, sosmed1):
+        keys=["{}".format(sosmed), "{}".format(sosmed1), "{}".format(account)]
         payload = {
             "query": 'mutation {  generateShortLink(input: {originUrl: "%s", subIds: %s}) { shortLink } }' %
             (url, json.dumps(keys))

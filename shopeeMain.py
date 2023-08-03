@@ -131,12 +131,14 @@ if button1:
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
         print(ts)
-        utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
-        print(utmContent)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
         if "lazada" in x:
             res = ""
         else:
-            res = sa.generateShortLink(x, utmContent, option)
+            res = sa.generateShortLink(x, utmContent1, utmContent2, option)
         print(res)
         affLinks.append(res)
         
@@ -174,9 +176,14 @@ if button2:
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
         print(ts)
-        utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
-        print(utmContent)
-        res = sa.generateShortLink(k, utmContent, option)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
+        if "lazada" in k:
+            res = ""
+        else:
+            res = sa.generateShortLink(k, utmContent1, utmContent2, option)
         print(res)
         affLinks11.append(res)
  
@@ -225,12 +232,14 @@ if button3:
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
         print(ts)
-        utmContent = str(todayDate).replace("-", "") + taskPeople + str(ts)
-        print(utmContent)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
         if "lazada" in x:
             res = ""
         else:
-            res = sa.generateShortLink(x, utmContent, option)
+            res = sa.generateShortLink(x, utmContent1, utmContent2, option)
         print(res)
         affLinks1.append(res)
 
