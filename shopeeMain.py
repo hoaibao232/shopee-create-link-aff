@@ -18,7 +18,7 @@ st.set_page_config(
 
 taskPeople = st.selectbox(
     'Người làm',
-    ['BAO', 'LUT', 'VAN'])
+    ['BAO', 'LUT', 'VAN', 'VI'])
 
 appid = "17318220053" # Your appid
 appid = st.selectbox(
