@@ -36,16 +36,6 @@ class ShopeeAffiliate():
         )
         return response.json()
 
-    def reqAT(self, payload={}):
-        headers = self.header(payload)
-        response = requests.post(
-            'https://api.accesstrade.vn/v1/product_link/create',
-            headers=headers,
-            json=payload,
-            timeout=20
-        )
-        return response.json()
-
     def generateShortLink(self, url, account, sosmed, sosmed1):
         keys=["{}".format(sosmed), "{}".format(sosmed1), "{}".format(account)]
         payload = {
@@ -54,15 +44,6 @@ class ShopeeAffiliate():
         }
         res = self.req(payload)
         return res['data']['generateShortLink']['shortLink']
-
-    # def generateShortLinkAT(self, url, account, sosmed):
-    #     keys=["{}".format(sosmed), "{}".format(account)]
-    #     payload = {
-    #         "query": 'mutation {  generateShortLink(input: {originUrl: "%s", subIds: %s}) { shortLink } }' %
-    #         (url, json.dumps(keys))
-    #     }
-    #     res = self.req(payload)
-    #     return res['data']['generateShortLink']['shortLink']
 
     def _report_(self, start: datetime = None, end: datetime = None, scrollId="", status=STATUS_ALL):
         start = start.replace(hour=0, minute=0, second=0, microsecond=0)
@@ -122,3 +103,46 @@ class ShopeeAffiliate():
             start.strftime(FORMAT_DATE),
             end.strftime(FORMAT_DATE)
         )
+
+class ATAffiliate():
+    def __init__(self, token) -> None:
+        self.token = token
+
+    def header(self, payload={}):
+        
+        return {
+            'Authorization': 'Token %s' % (self.token),
+            'Content-Type': 'application/json',
+        }
+        
+    def req(self,payload):
+        headers = self.header()
+        response = requests.post(
+            'https://api.accesstrade.vn/v1/product_link/create',
+            headers=headers,
+            json=payload,
+            timeout=20
+        )
+        return response.json()
+    
+    def generateShortLink(self, url, campaign_id, account, sosmed, sosmed1):
+        keys=["{}".format(sosmed), "{}".format(sosmed1), "{}".format(account)]
+        payload = {
+          "campaign_id" : campaign_id,
+           "urls": url,
+           "utm_source":account,
+            "utm_medium":sosmed,
+            "utm_content":sosmed1,
+        }
+        res = self.req(payload)
+        print(res)
+        return res['data']['success_link'][0]['short_link']
+    
+    def getATCampaign(self):
+        headers = self.header()
+        response = requests.get(
+            'https://api.accesstrade.vn/v1/campaigns?limit=5',
+            headers=headers,
+            timeout=20
+        )
+        return response.json()

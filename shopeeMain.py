@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from datetime import date
-from shopeeAuth import ShopeeAffiliate
+from shopeeAuth import ShopeeAffiliate, ATAffiliate
 import streamlit as st
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -16,18 +16,27 @@ st.set_page_config(
         page_icon="😍"                  
         )
 
+BACKGROUND_COLOR = 'white'
+COLOR = 'black'
+
+with st.expander("Thông báo"):
+    st.success("Hiện tại Shopee đang bị lỗi tạo link, nên mọi người tạm thời sử dụng các tính năng trong phần 'Tạo Link AT' nhé. Tool đã có thể tạo link cho 3 sàn Shopee, Lazada, Tiki")
+    
 taskPeople = st.selectbox(
     'Người làm',
     ['BAO', 'LUT', 'VAN', 'VI'])
 
 appid = "17318220053" # Your appid
-appid = st.selectbox(
-    'Tài khoản Shopee',
-    ['17318220053', '17328650055', '17380760085'])
 
-# ATid = st.selectbox(
-#     'Tài khoản AT Lazada',
-#     ['Bao', 'Van', 'Lut'])
+coll1, coll2 = st.columns(2)
+with coll1:
+    appid = st.selectbox(
+        'Tài khoản Shopee',
+        ['17318220053', '17328650055', '17380760085'])
+with coll2:
+    ATid = st.selectbox(
+        'Tài khoản AT',
+        ['1', '2', '3'])
 
 if appid == "17318220053":
     secret = "VQQEHZVTZS5ETDUI2KFHSFPW6YTCBCES"
@@ -36,12 +45,12 @@ elif appid == "17328650055":
 elif appid == "17380760085":
     secret = "F6QVZQDUBMOI57X74Q55U5U2EJ7HYPG3"
 
-# if ATid == "Bao":
-#     accessKey = "rtFpJnRsPYs9A4edyv2UAHRQxP20Lq4A"
-# elif ATid == "Lut":
-#     accessKey = "GVR5cejXtxeUkDzlTsqH6aJOYx9yt1Ae"
-# elif ATid == "Van":
-#     accessKey = "jZGjKwszHSHBmo-HAkq9NUmjxMJZ1mqf"
+if ATid == "1":
+    accessKey = "rtFpJnRsPYs9A4edyv2UAHRQxP20Lq4A"
+elif ATid == "2":
+    accessKey = "GVR5cejXtxeUkDzlTsqH6aJOYx9yt1Ae"
+elif ATid == "3":
+    accessKey = "jZGjKwszHSHBmo-HAkq9NUmjxMJZ1mqf"
 
 
 data = []
@@ -78,40 +87,52 @@ data = data[1:]
 # conversion, estimation, startdate_, enddate_ = res1
 # st.write("Doanh thu uoc tinh:", estimation)
 
-# res = sa.generateShortLink("https://shopee.vn/shop/114077203", "BAO", "BIDA")
-# print (res)
-number = st.number_input('Số link cần tạo:', step=1)
-df = pd.DataFrame(data,columns=['Sản phẩm', 'Category', 'Link gốc', 'Shopee Link', 'Comment', 'Note'])
-# df = df.rename(columns={'0': 'San Pham', '1': 'Category','2': 'Source Link','3': 'Aff Link'})
+colk1, colk2 = st.columns(2)
+with colk2:
+    number = st.number_input('Số link cần tạo:', step=1)
+    df = pd.DataFrame(data,columns=['Sản phẩm', 'Category', 'Link gốc', 'Shopee Link', 'Comment', 'Note'])
+    # df = df.rename(columns={'0': 'San Pham', '1': 'Category','2': 'Source Link','3': 'Aff Link'})
 
-# print (df)
 category = df['Category'].values
 category=[*set(category)]
-# print(category)
 
-option = st.selectbox(
-    'Chọn loại sản phẩm',
-    category)
+with colk1:
+    option = st.selectbox(
+        'Chọn loại sản phẩm',
+        category)
 
 
-
-customLinks = st.text_area('Custom Link', '', key="text")
+with st.expander("Custom Link"):  
+    customLinks = st.text_area('Điền danh sách link', '', key="text")
 
 def clear_text():
     st.session_state["text"] = ""
 
 df = df.loc[df['Category'] == option]
 
-col1, col2, col3 = st.columns(3)
 
-with col1:
-    button1 = st.button('Tạo Link random', on_click=clear_text)
+with st.expander("Tạo Link Shopee"): 
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        button1 = st.button('Tạo Link random', on_click=clear_text)
 
-with col3:
-    button2 = st.button('Custom Link')
+    with col3:
+        button2 = st.button('Custom Link')
 
-with col2:
-    button3 = st.button('Tạo Link đã chọn', on_click=clear_text)
+    with col2:
+        button3 = st.button('Tạo Link đã chọn', on_click=clear_text)
+    
+    
+with st.expander("Tạo Link AT"): 
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        button4 = st.button('Tạo Link random AT', on_click=clear_text)
+        
+    with col5:
+        button5 = st.button('Tạo Link đã chọn AT', on_click=clear_text)
+        
+    with col6:
+        button6 = st.button('Custom Link AT')
 
 c = st.container()
 
@@ -161,10 +182,61 @@ if button1:
     # st.write(str1)
     st.code(str1, language="csv", line_numbers=False)
 
+if button4:
+    texttt = st.empty()
+    at = ATAffiliate(accessKey)
+    
+    texttt = st.empty()
+    at = ATAffiliate(accessKey)
+    df = df.loc[df['Category'] == option]
+    df = df.sample(n = number)
+    print(df)
+    
+    sourceLinks = df['Link gốc'].values
+    affLinks = []
+    campaign_id = ""
+    for x in sourceLinks:
+        print(x)
+        todayDate = date.today()
+        dt = datetime.now()
+        ts = round(datetime.timestamp(dt))
+        print(ts)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
+        if "lazada" in x:
+            campaign_id = "5127144557053758578"
+        elif "shopee" in x:
+            campaign_id = "4751584435713464237"
+        elif "tiki" in x:
+            campaign_id = "4348614231480407268"
+        res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
+        print(res)
+        affLinks.append(res)
+        
+    for i, prod in enumerate(df.index):
+        df.iloc[i, 3] = affLinks[i]
+        
+    arrayData = np.array(df[['Shopee Link','Comment']])
+    print(arrayData)
+    str1=""
+    for element in arrayData:
+        cmtContent = element[1] + element[0] + "\n\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str1 = str1 + cmtContent
+    
+    text_to_be_copied = str1
+    # pyperclip.copy(text_to_be_copied)
 
-
+    print (str1)
+    # st.write(str1)
+    st.code(str1, language="csv", line_numbers=False)
+    
 if button2:
     sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
     print(customLinks)
     lines = customLinks.split("\n")
     print(lines)
@@ -181,8 +253,12 @@ if button2:
         print(utmContent1)
         print(utmContent2)
         if "lazada" in k:
-            res = ""
-        else:
+            campaign_id = "5127144557053758578"
+            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+        elif "tiki" in k:
+            campaign_id = "4348614231480407268"
+            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+        elif "shopee" in k:
             res = sa.generateShortLink(k, utmContent1, utmContent2, option)
         print(res)
         affLinks11.append(res)
@@ -199,7 +275,7 @@ if button2:
     print (str11)
     st.code(str11, language="csv", line_numbers=False)
 
-
+    
 # select the columns you want the users to see
 gb = GridOptionsBuilder.from_dataframe(df)
 # configure selection
@@ -220,6 +296,7 @@ str11 = ""
 if button3:
     texttt = st.empty()
     sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
     for index, element in enumerate(data['selected_rows']):
         srcLink = data['selected_rows'][index]['Link gốc']
         cmtCapt = data['selected_rows'][index]['Comment']
@@ -236,12 +313,18 @@ if button3:
         utmContent2 = taskPeople
         print(utmContent1)
         print(utmContent2)
+        
         if "lazada" in x:
-            res = ""
-        else:
+            campaign_id = "5127144557053758578"
+            res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
+        elif "tiki" in x:
+            campaign_id = "4348614231480407268"
+            res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
+        elif "shopee" in x:
             res = sa.generateShortLink(x, utmContent1, utmContent2, option)
         print(res)
         affLinks1.append(res)
+        
 
     print(affLinks1)
     # print(df)
@@ -259,7 +342,91 @@ if button3:
     with c:
         st.code(str11, language="csv", line_numbers=False)
 
+if button5:
+    texttt = st.empty()
+    sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
+    for index, element in enumerate(data['selected_rows']):
+        srcLink = data['selected_rows'][index]['Link gốc']
+        cmtCapt = data['selected_rows'][index]['Comment']
+        commentCaption.append(cmtCapt)
+        selectedLinks.append(srcLink)
 
+    for x in selectedLinks:
+        print(x)
+        todayDate = date.today()
+        dt = datetime.now()
+        ts = round(datetime.timestamp(dt))
+        print(ts)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
+        
+        if "lazada" in x:
+            campaign_id = "5127144557053758578"
+        elif "tiki" in x:
+            campaign_id = "4348614231480407268"
+        elif "shopee" in x:
+            campaign_id = "4751584435713464237"    
+        res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
+        affLinks1.append(res)
+        
 
-              
+    print(affLinks1)
+    # print(df)
+        
+    # for i, prod in enumerate(df.index):
+    #     df.iloc[i, 3] = affLinks1[i]
+        
+    for i in range(len(affLinks1)):
+        cmtContent = commentCaption[i] + affLinks1[i] + "\n\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str11 = str11 + cmtContent
+
+    print (str11)
+    with c:
+        st.code(str11, language="csv", line_numbers=False)
+
+if button6:
+    sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
+    print(customLinks)
+    lines = customLinks.split("\n")
+    print(lines)
+    affLinks11=[]
+    str11=""
+    campaign_id =""
+    for k in lines:
+        print(k)
+        todayDate = date.today()
+        dt = datetime.now()
+        ts = round(datetime.timestamp(dt))
+        print(ts)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        utmContent2 = taskPeople
+        print(utmContent1)
+        print(utmContent2)
+        if "lazada" in k:
+            campaign_id = "5127144557053758578"
+        elif "tiki" in k:
+            campaign_id = "4348614231480407268"
+        elif "shopee" in k:
+            campaign_id = "4751584435713464237"  
+        res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+        affLinks11.append(res)
+ 
+    for element in affLinks11:
+        cmtContent = element + "\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str11 = str11 + cmtContent
+    
+    text_to_be_copied = str11
+    # pyperclip.copy(text_to_be_copied)
+
+    print (str11)
+    with c:
+        st.code(str11, language="csv", line_numbers=False)   
 # st.dataframe(df, use_container_width=True)
