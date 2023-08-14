@@ -19,8 +19,8 @@ st.set_page_config(
 BACKGROUND_COLOR = 'white'
 COLOR = 'black'
 
-with st.expander("Thông báo"):
-    st.success("Hiện tại Shopee đang bị lỗi tạo link, nên mọi người tạm thời sử dụng các tính năng trong phần 'Tạo Link AT' nhé. Tool đã có thể tạo link cho 3 sàn Shopee, Lazada, Tiki")
+# with st.expander("Thông báo"):
+#     st.success("Hiện tại Shopee đang bị lỗi tạo link, nên mọi người tạm thời sử dụng các tính năng trong phần 'Tạo Link AT' nhé. Tool đã có thể tạo link cho 3 sàn Shopee, Lazada, Tiki")
     
 taskPeople = st.selectbox(
     'Người làm',
