@@ -30,9 +30,12 @@ appid = "17318220053" # Your appid
 
 coll1, coll2 = st.columns(2)
 with coll1:
+    # appid = st.selectbox(
+    #     'Tài khoản Shopee',
+    #     ['17318220053', '17328650055', '17380760085'])
     appid = st.selectbox(
         'Tài khoản Shopee',
-        ['17318220053', '17328650055', '17380760085'])
+        ['17318220053'])
 with coll2:
     ATid = st.selectbox(
         'Tài khoản AT',
