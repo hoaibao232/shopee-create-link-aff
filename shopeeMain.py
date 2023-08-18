@@ -456,7 +456,8 @@ if button6:
         
         if k != "":
             res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
-            res = type_tiny.tinyurl.short(res)
+            if checkMGG == "MGG":
+                res = type_tiny.tinyurl.short(res)
             affLinks11.append(res)
         else:
             res = k
