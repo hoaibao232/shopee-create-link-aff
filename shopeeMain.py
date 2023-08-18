@@ -126,22 +126,22 @@ df = df.loc[df['Category'] == option]
 with st.expander("Tạo Link Shopee"): 
     col1, col2, col3 = st.columns(3)
     with col1:
-        button1 = st.button('Tạo Link random', on_click=clear_text)
+        button1 = st.button('Tạo Link random')
 
     with col3:
         button2 = st.button('Custom Link')
 
     with col2:
-        button3 = st.button('Tạo Link đã chọn', on_click=clear_text)
+        button3 = st.button('Tạo Link đã chọn')
     
     
 with st.expander("Tạo Link AT"): 
     col4, col5, col6 = st.columns(3)
     with col4:
-        button4 = st.button('Tạo Link random AT', on_click=clear_text)
+        button4 = st.button('Tạo Link random AT')
         
     with col5:
-        button5 = st.button('Tạo Link đã chọn AT', on_click=clear_text)
+        button5 = st.button('Tạo Link đã chọn AT')
         
     with col6:
         button6 = st.button('Custom Link AT')
