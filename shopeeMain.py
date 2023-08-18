@@ -7,9 +7,12 @@ from googleapiclient.discovery import build
 import pandas as pd
 import random
 import numpy as np
-import pyperclip
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, ColumnsAutoSizeMode
-
+import re
+from urlextract import URLExtract
+# import urlexpander
+import pyshorteners
+import requests
 
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
@@ -21,11 +24,17 @@ COLOR = 'black'
 
 # with st.expander("Thông báo"):
 #     st.success("Hiện tại Shopee đang bị lỗi tạo link, nên mọi người tạm thời sử dụng các tính năng trong phần 'Tạo Link AT' nhé. Tool đã có thể tạo link cho 3 sàn Shopee, Lazada, Tiki")
-    
-taskPeople = st.selectbox(
-    'Người làm',
-    ['BAO', 'LUT', 'VAN', 'VI'])
 
+colu1, colu2 = st.columns(2)
+with colu1:
+    taskPeople = st.selectbox(
+        'Người làm',
+        ['BAO', 'LUT', 'VAN', 'VI'])
+with colu2:
+    checkMGG = st.selectbox(
+        'Mã giảm giá',
+        ['', 'MGG'])
+     
 appid = "17318220053" # Your appid
 
 coll1, coll2 = st.columns(2)
@@ -392,23 +401,48 @@ if button5:
     with c:
         st.code(str11, language="csv", line_numbers=False)
 
+def find(URL):
+    url = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',URL) 
+    return url
+
+urls = []
+lines = []
+affLinks12 = []
 if button6:
     sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
+    type_tiny = pyshorteners.Shortener()
     print(customLinks)
-    lines = customLinks.split("\n")
+    
+    extractor = URLExtract()
+    lines = extractor.find_urls(customLinks)
     print(lines)
+  
+    # lines = customLinks.split("\n")
+    # print(lines)
     affLinks11=[]
     str11=""
     campaign_id =""
     for k in lines:
-        print(k)
+        k = k.replace(",","")
+        # k = urlexpander.expand(k)
+        # print(k)
+        try:
+            response = requests.head(k)
+            print(response.headers['location'])
+            k = response.headers['location']
+        except:
+            k = ""
+
         todayDate = date.today()
         dt = datetime.now()
         ts = round(datetime.timestamp(dt))
         print(ts)
         utmContent1 = str(todayDate).replace("-", "") + str(ts)
-        utmContent2 = taskPeople
+        if checkMGG == "MGG":
+            utmContent2 = taskPeople + "MGG"
+        else:
+            utmContent2 = taskPeople
         print(utmContent1)
         print(utmContent2)
         if "lazada" in k:
@@ -416,20 +450,37 @@ if button6:
         elif "tiki" in k:
             campaign_id = "4348614231480407268"
         elif "shopee" in k:
-            campaign_id = "4751584435713464237"  
-        res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
-        affLinks11.append(res)
- 
+            campaign_id = "4751584435713464237"
+        elif "shope.ee" in k:
+            campaign_id = "4751584435713464237"
+        
+        if k != "":
+            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+            res = type_tiny.tinyurl.short(res)
+            affLinks11.append(res)
+        else:
+            res = k
+            affLinks11.append(res)
+    
+    affLinks12 = affLinks11
+    
     for element in affLinks11:
         cmtContent = element + "\n"
         cmtContent = cmtContent.replace("\n","  \n")
         print (cmtContent)
         str11 = str11 + cmtContent
     
+
+    for x, y in zip(lines, affLinks12):
+        customLinks = customLinks.replace(x, y)
+
+    print(customLinks)
+    # aXbYcZd
+    
     text_to_be_copied = str11
     # pyperclip.copy(text_to_be_copied)
 
     print (str11)
     with c:
-        st.code(str11, language="csv", line_numbers=False)   
+        st.code(customLinks, language="csv", line_numbers=False)   
 # st.dataframe(df, use_container_width=True)
