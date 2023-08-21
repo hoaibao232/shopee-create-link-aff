@@ -13,6 +13,7 @@ from urlextract import URLExtract
 # import urlexpander
 import pyshorteners
 import requests
+import time
 
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
@@ -433,6 +434,13 @@ if button6:
             k = response.headers['location']
         except:
             k = ""
+            
+        try:
+            response = requests.head(k)
+            print(response.headers['location'])
+            k = response.headers['location']
+        except:
+            k = ""
 
         todayDate = date.today()
         dt = datetime.now()
@@ -455,9 +463,15 @@ if button6:
             campaign_id = "4751584435713464237"
         
         if k != "":
-            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+            try:
+                res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+            except:
+                res = ""
             if checkMGG == "MGG":
-                res = type_tiny.tinyurl.short(res)
+                try:
+                    res = type_tiny.tinyurl.short(res)
+                except:
+                    res = res
             affLinks11.append(res)
         else:
             res = k
