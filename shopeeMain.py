@@ -13,7 +13,6 @@ from urlextract import URLExtract
 # import urlexpander
 import pyshorteners
 import requests
-import time
 
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
