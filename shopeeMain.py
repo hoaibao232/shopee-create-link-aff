@@ -16,28 +16,35 @@ import requests
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 import pickle
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from urllib.parse import unquote
-
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.firefox import GeckoDriverManager
 
 def openChrome():
     options = Options()
-    options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    # options.add_experimental_option("excludeSwitches", ["enable-logging"])
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
-    options.add_experimental_option("detach", True)
+    # options.add_experimental_option("detach", True)
 
-    driver = webdriver.Chrome(
+    driver = webdriver.Firefox(
         options=options,
-        service=Service(ChromeDriverManager().install()),
+        service=Service(GeckoDriverManager().install()),
     )
     # driver.get("https://affiliate.shopee.vn/dashboard")
     
@@ -170,12 +177,12 @@ appid = "17318220053" # Your appid
 
 coll1, coll2 = st.columns(2)
 with coll1:
-    # appid = st.selectbox(
-    #     'Tài khoản Shopee',
-    #     ['17318220053', '17328650055', '17380760085'])
     appid = st.selectbox(
         'Tài khoản Shopee',
-        ['17318220053'])
+        ['17318220053', '17328650055', '17380760085'])
+    # appid = st.selectbox(
+    #     'Tài khoản Shopee',
+    #     ['17318220053'])
 with coll2:
     ATid = st.selectbox(
         'Tài khoản AT',
@@ -621,10 +628,10 @@ if button2:
             k = k.split('origin_link=')[1]
             k = unquote(k)
             # print(k)
-            if "?utm_term" in k:
-                k = k.split('?utm_term')[0]
-            elif "&utm_term" in k:
-                k = k.split('&utm_term')[0]
+            if "?utm" in k:
+                k = k.split('?utm')[0]
+            elif "&utm" in k:
+                k = k.split('&utm')[0]
             print(k)
         else:
             try:
@@ -632,7 +639,10 @@ if button2:
                 print(response.headers['location'])
                 print('+++++++++++++++')
                 k = response.headers['location']
-                k = k.split('?')[0]
+                if "?utm" in k:
+                    k = k.split('?utm')[0]
+                elif "&utm" in k:
+                    k = k.split('&utm')[0]
                 print(k)
             except:
                 k = ""
