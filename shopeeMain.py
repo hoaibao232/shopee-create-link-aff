@@ -598,6 +598,7 @@ if button6:
         st.code(customLinks, language="csv", line_numbers=False)   
 # st.dataframe(df, use_container_width=True)
 
+
 if button2:
     driver = openChrome()
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
@@ -677,6 +678,11 @@ if button2:
                     print("RUT GON LINK")
                     res = shopeeCookieLink(driver,k,utmContent2)
                     print(res)
+                elif (campaign_id == "5127144557053758578"):
+                    try:
+                        res = type_tiny.tinyurl.short(k)
+                    except:
+                        res = k
                 else:
                     res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
             except:
@@ -714,7 +720,7 @@ if button2:
     with c:
         st.code(customLinks, language="csv", line_numbers=False)
         
-    driver.quit();
+    # driver.quit();
 
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)

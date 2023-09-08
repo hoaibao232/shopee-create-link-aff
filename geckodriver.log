@@ -16347,3 +16347,84 @@ console.warn: services.settings: main/doh-config sync interrupted by shutdown
 console.warn: services.settings: main/devtools-devices sync interrupted by shutdown
 console.warn: services.settings: main/websites-with-shared-credential-backends sync interrupted by shutdown
 console.error: (new AbortError("IndexedDB: main/language-dictionaries getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1694191222945	geckodriver	INFO	Listening on 127.0.0.1:52627
+1694191225985	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-gpu" "--remote-debugging-port" " ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileKtMsgX"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694191226401	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694191226512	Marionette	INFO	Listening on port 52635
+WebDriver BiDi listening on ws://127.0.0.1:52628
+Read port: 52635
+1694191227558	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:52628/devtools/browser/8a326386-8fa7-477d-ad52-2760728e33cb
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript warning: https://connect.facebook.net/en_US/fbevents.js, line 24: Script terminated by timeout at:
+value@https://connect.facebook.net/en_US/fbevents.js:24:7808
+@https://connect.facebook.net/en_US/fbevents.js:24:65378
+
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1694191267016	Marionette	INFO	Stopped listening on port 52635
+Dynamically enable window occlusion 1
+erride of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694191261421	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694191261532	Marionette	INFO	Listening on port 52714
+WebDriver BiDi listening on ws://127.0.0.1:52707
+Read port: 52714
+1694191262864	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:52707/devtools/browser/c90c546b-a6ad-41ca-9eb0-9c0bf95476dd
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694191268241	Marionette	INFO	Stopped listening on port 52714
+Dynamically enable window occlusion 1
+console.error: SearchService: "maybeReloadEngines failed" (new Error("XPIProvider can't start bootstrap scope for google@search.mozilla.org after shutdown was already granted", "resource://gre/modules/addons/XPIProvider.jsm", 1977))
+1694191345484	geckodriver	INFO	Listening on 127.0.0.1:52778
+1694191348520	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-gpu" "--remote-debugging-port" " ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileOZsqc9"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694191348915	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694191348996	Marionette	INFO	Listening on port 52791
+WebDriver BiDi listening on ws://127.0.0.1:52779
+Read port: 52791
+1694191350146	geckodriver	INFO	Listening on 127.0.0.1:52797
+1694191353214	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-gpu" "--remote-debugging-port" " ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\ApJavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/pc-layout.bd3ef67c.js, line 1: TypeError: n.data is null
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, linconsole.error: (new TypeError("this._searchProviderInfo is nullJavaScript error: resource://gre/modules/LoginManagerChild.sy[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1694191374485	Marionette	INFO	Stopped listening on port 52823
+Dynamically enable window occlusion 1
+Child.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript warning: https://affiliate.shopee.vn/offer/custom_link?is_from_login=true, line 9: Script terminated by timeout at:
+532/h<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:66474
+532/x.prototype.processData@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:72112
+532/x.prototype.getDataChunk@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:69328
+532/x.prototype.handleDataBeforeTerminated/</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:69816
+e/<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:66279
+532/o</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65314
+532/o<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65065
+532/x.prototype.handleDataBeforeTerminated@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:69623
+532/x.prototype.reportData/</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:70167
+e/<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:66279
+532/o</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65314
+532/o<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65065
+532/x.prototype.reportData@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:70061
+532/x.prototype.check/</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:69154
+e/<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:66279
+532/o</<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65314
+532/o<@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:65065
+532/x.prototype.check@https://affiliate.shopee.vn/offer/custom_link?is_from_login=true:9:68887
+
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1694191373350	Marionette	INFO	Stopped listening on port 52791
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+1694191373459	WebDriver BiDi	ERROR	Failed to stop protocol: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: chrome://remote/content/marionette/cert.sys.mjs :: allowAllCerts.disable :: line 51"  data: no] Stack trace: allowAllCerts.disable()@cert.sys.mjs:51
+destroy()@Session.sys.mjs:215
+deleteSession()@WebDriverBiDi.sys.mjs:140
+stop()@WebDriverBiDi.sys.mjs:228
