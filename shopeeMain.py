@@ -13,6 +13,137 @@ from urlextract import URLExtract
 # import urlexpander
 import pyshorteners
 import requests
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
+import pickle
+from selenium.webdriver.common.keys import Keys
+from time import sleep
+from urllib.parse import unquote
+
+
+def openChrome():
+    options = Options()
+    options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
+    options.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(
+        options=options,
+        service=Service(ChromeDriverManager().install()),
+    )
+    # driver.get("https://affiliate.shopee.vn/dashboard")
+    
+    if appid == "17318220053":
+        username = "nguyenhoaibaoltt@gmail.com"
+        password = "thaidunGG512976!"
+        filename = "17318220053_my_cookie.pkl"
+    if appid == "17380760085":
+        username = "nguyenthithanhdungst@gmail.com"
+        password = "Hoaibao232!"
+        filename = "17380760085_my_cookie.pkl"
+    
+
+    driver.get("https://affiliate.shopee.vn/offer/custom_link")
+    
+    try:
+        cookies = pickle.load(open(filename,"rb"))
+        print("LOAD COOKIE")
+
+        for cookie in cookies:
+            driver.add_cookie(cookie)
+    except:
+        print("LOAD COOKIE FAIL")
+    sleep(5)
+    
+   
+    try:
+        txtUser = driver.find_element(By.NAME,"loginKey")
+        txtUser.send_keys(username)
+
+        txtPassword = driver.find_element(By.NAME,"password")
+        txtPassword.send_keys(password)
+
+        txtPassword.send_keys(Keys.ENTER)
+
+        sleep(10)
+
+        pickle.dump(driver.get_cookies(), open(filename,"wb"))
+
+    except:
+        print ("LOGGED")
+        
+    return driver
+
+def shopeeCookieLink(driver,urls,utmContent2):
+    # 3. Refresh the browser
+    # driver.get("https://affiliate.shopee.vn/offer/custom_link")
+    # sleep(10)
+    
+    try:
+        txtUser1 = driver.find_element(By.NAME,"loginKey")
+        print ("BI LOGOUT")
+    except:
+        print ("VAN CON LOG")
+        
+    try:
+        buttonclose = driver.find_element(By.XPATH, "//button[@class='ant-btn']");
+        buttonclose.click()
+    except:
+        print("1")
+        
+    sleep(2)
+
+    link = urls
+    shortenURL = ''
+
+    # for link in linkArr:
+    print(link)
+    try:
+        txtLink = driver.find_element(By.XPATH, '//textarea[@class="ant-input"]');
+        # txtLink.click()
+        txtLink.clear()
+        txtLink.send_keys(link)
+    except:
+        print("ERROR 1 ")
+    
+    try:
+        subId1 = driver.find_element(By.ID, 'customLink_sub_id1');
+        # subId1.click()
+        subId1.clear()
+        subId1.send_keys(utmContent2)
+    except:
+        print("ERROR 2")
+
+    try:
+        submitBtn = driver.find_element(By.XPATH, '//button[@type="submit"]');
+        submitBtn.click()
+        sleep(3)
+        shortenLink = driver.find_elements(By.XPATH,'//textarea[@class="ant-input ant-input-disabled"]')
+    except:
+        print("ERROR 3")
+        
+    for i in shortenLink:
+        shortenURL = i.text
+        print(shortenURL)
+    
+    try:
+        closeBtn = driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/button');
+        closeBtn.click()
+    except:
+        closeBtn = driver.find_element(By.XPATH, '/html/body/div[3]/div/div[2]/div/div[2]/button');
+        closeBtn.click()
+
+    return shortenURL
+        # driver.get("https://affiliate.shopee.vn/offer/custom_link")
+        # sleep(5)
 
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
@@ -246,48 +377,6 @@ if button4:
     # st.write(str1)
     st.code(str1, language="csv", line_numbers=False)
     
-if button2:
-    sa = ShopeeAffiliate(appid, secret)
-    at = ATAffiliate(accessKey)
-    print(customLinks)
-    lines = customLinks.split("\n")
-    print(lines)
-    affLinks11=[]
-    str11=""
-    for k in lines:
-        print(k)
-        todayDate = date.today()
-        dt = datetime.now()
-        ts = round(datetime.timestamp(dt))
-        print(ts)
-        utmContent1 = str(todayDate).replace("-", "") + str(ts)
-        utmContent2 = taskPeople
-        print(utmContent1)
-        print(utmContent2)
-        if "lazada" in k:
-            campaign_id = "5127144557053758578"
-            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
-        elif "tiki" in k:
-            campaign_id = "4348614231480407268"
-            res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
-        elif "shopee" in k:
-            res = sa.generateShortLink(k, utmContent1, utmContent2, option)
-        print(res)
-        affLinks11.append(res)
- 
-    for element in affLinks11:
-        cmtContent = element + "\n"
-        cmtContent = cmtContent.replace("\n","  \n")
-        print (cmtContent)
-        str11 = str11 + cmtContent
-    
-    text_to_be_copied = str11
-    # pyperclip.copy(text_to_be_copied)
-
-    print (str11)
-    st.code(str11, language="csv", line_numbers=False)
-
-    
 # select the columns you want the users to see
 gb = GridOptionsBuilder.from_dataframe(df)
 # configure selection
@@ -498,3 +587,159 @@ if button6:
     with c:
         st.code(customLinks, language="csv", line_numbers=False)   
 # st.dataframe(df, use_container_width=True)
+
+if button2:
+    driver = openChrome()
+    driver.get("https://affiliate.shopee.vn/offer/custom_link")
+    sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
+    type_tiny = pyshorteners.Shortener()
+    print(customLinks)
+    
+    extractor = URLExtract()
+    lines = extractor.find_urls(customLinks)
+    print(lines)
+  
+    # lines = customLinks.split("\n")
+    # print(lines)
+    affLinks11=[]
+    str11=""
+    campaign_id =""
+    for k in lines:
+        k = k.replace(",","")
+        # k = urlexpander.expand(k)
+        # print(k)
+        try:
+            response = requests.head(k)
+            print(response.headers['location'])
+            print('==============')
+            k = response.headers['location']
+        except:
+            k = ""
+        
+        if  "https://shope.ee/an_redir?origin_link" in k:
+            k = k.split('origin_link=')[1]
+            k = unquote(k)
+            # print(k)
+            if "?utm_term" in k:
+                k = k.split('?utm_term')[0]
+            elif "&utm_term" in k:
+                k = k.split('&utm_term')[0]
+            print(k)
+        else:
+            try:
+                response = requests.head(k)
+                print(response.headers['location'])
+                print('+++++++++++++++')
+                k = response.headers['location']
+                k = k.split('?')[0]
+                print(k)
+            except:
+                k = ""
+
+        todayDate = date.today()
+        dt = datetime.now()
+        ts = round(datetime.timestamp(dt))
+        # print(ts)
+        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        if checkMGG == "MGG":
+            utmContent2 = taskPeople + "MGG"
+        else:
+            utmContent2 = taskPeople
+        # print(utmContent1)
+        # print(utmContent2)
+        if "lazada" in k:
+            campaign_id = "5127144557053758578"
+        elif "tiki" in k:
+            campaign_id = "4348614231480407268"
+        elif "shopee" in k:
+            campaign_id = "4751584435713464237"
+        elif "shope.ee" in k:
+            campaign_id = "4751584435713464237"
+        
+        if k != "":
+            try:
+                if (campaign_id == "4751584435713464237"):
+                    sleep(2)
+                    print("RUT GON LINK")
+                    res = shopeeCookieLink(driver,k,utmContent2)
+                    print(res)
+                else:
+                    res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+            except:
+                print("Something else went wrong")
+                res = ""
+            # if checkMGG == "MGG":
+            #     try:
+            #         res = type_tiny.tinyurl.short(res)
+            #     except:
+            #         res = res
+            affLinks11.append(res)
+        else:
+            res = k
+            affLinks11.append(res)
+    
+    affLinks12 = affLinks11
+    
+    for element in affLinks11:
+        cmtContent = element + "\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str11 = str11 + cmtContent
+    
+
+    for x, y in zip(lines, affLinks12):
+        customLinks = customLinks.replace(x, y)
+
+    print(customLinks)
+    # aXbYcZd
+    
+    text_to_be_copied = str11
+    # pyperclip.copy(text_to_be_copied)
+
+    print (str11)
+    with c:
+        st.code(customLinks, language="csv", line_numbers=False)
+        
+    driver.quit();
+
+# if button2:
+#     sa = ShopeeAffiliate(appid, secret)
+#     at = ATAffiliate(accessKey)
+#     print(customLinks)
+#     lines = customLinks.split("\n")
+#     print(lines)
+#     affLinks11=[]
+#     str11=""
+#     for k in lines:
+#         print(k)
+#         todayDate = date.today()
+#         dt = datetime.now()
+#         ts = round(datetime.timestamp(dt))
+#         print(ts)
+#         utmContent1 = str(todayDate).replace("-", "") + str(ts)
+#         utmContent2 = taskPeople
+#         print(utmContent1)
+#         print(utmContent2)
+#         if "lazada" in k:
+#             campaign_id = "5127144557053758578"
+#             res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+#         elif "tiki" in k:
+#             campaign_id = "4348614231480407268"
+#             res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+#         elif "shopee" in k:
+#             res = sa.generateShortLink(k, utmContent1, utmContent2, option)
+#         print(res)
+#         affLinks11.append(res)
+ 
+#     for element in affLinks11:
+#         cmtContent = element + "\n"
+#         cmtContent = cmtContent.replace("\n","  \n")
+#         print (cmtContent)
+#         str11 = str11 + cmtContent
+    
+#     text_to_be_copied = str11
+#     # pyperclip.copy(text_to_be_copied)
+
+#     print (str11)
+#     st.code(str11, language="csv", line_numbers=False)
