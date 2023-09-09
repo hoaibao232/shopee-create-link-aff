@@ -45,11 +45,9 @@ def openChrome():
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
 
-    service = Service(executable_path='./geckodriver')
-
     driver = webdriver.Firefox(
         options=options,
-        service=service,
+        service=Service(GeckoDriverManager().install()),
     )
     # driver.get("https://affiliate.shopee.vn/dashboard")
     
@@ -266,12 +264,15 @@ df = df.loc[df['Category'] == option]
 
 
 with st.expander("Tạo Link Shopee"): 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         button1 = st.button('Tạo Link random')
 
     with col3:
         button2 = st.button('Custom Link')
+        
+    with col4:
+        buttonTiny = st.button('Rút gọn tiny')
 
     with col2:
         button3 = st.button('Tạo Link đã chọn')
@@ -731,7 +732,55 @@ if button2:
         st.code(customLinks, language="csv", line_numbers=False)
         
     driver.quit();   
+
+if buttonTiny:
+    type_tiny = pyshorteners.Shortener()
+    extractor = URLExtract()
+    lines = extractor.find_urls(customLinks)
+    print(lines)
+  
+    # lines = customLinks.split("\n")
+    # print(lines)
+    affLinks11=[]
+    str11=""
+    campaign_id =""
+        
+    for k in lines:
+        if k != "":
+            try:
+                res = type_tiny.tinyurl.short(k)
+            except:
+                print("Something else went wrong")
+                res = ""
+            affLinks11.append(res)
+        else:
+            res = k
+            affLinks11.append(res)
     
+    affLinks12 = affLinks11
+    
+    print (affLinks11)
+    
+    for element in affLinks11:
+        cmtContent = element + "\n"
+        cmtContent = cmtContent.replace("\n","  \n")
+        print (cmtContent)
+        str11 = str11 + cmtContent
+    
+
+    for x, y in zip(lines, affLinks12):
+        customLinks = customLinks.replace(x, y)
+
+    print(customLinks)
+    
+    text_to_be_copied = str11
+    # pyperclip.copy(text_to_be_copied)
+
+    print (str11)
+    with c:
+        st.code(customLinks, language="csv", line_numbers=False)
+        
+
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
