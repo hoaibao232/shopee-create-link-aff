@@ -23353,10 +23353,8 @@ JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error:
 JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Users\nguye\AppData\Local\Temp\rust_mozprofileO4LANy\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Users\nguye\AppData\Local\Temp\rust_mozprofileO4LANy\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Users\nguye\AppData\Local\Temp\rust_mozprofileO4LANy\thumbnails) because it does not exist
-PTelemetry.sys.mjs", 638))
-console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
-1694261432266	Marionette	INFO	Stopped listening on port 61152
-Dynamically enable window occlusion 1
+JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Users\nguye\AppData\Local\Temp\rust_mozprofileO4LANy\thumbnails) because it does not exist
+nable window occlusion 1
 1694262656910	geckodriver	INFO	Listening on 127.0.0.1:61935
 1694262659964	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilefGVHsY"
 *** You are running in headless mode.
@@ -24569,3 +24567,12 @@ JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/as
 JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/6645.b863e0676be544e4.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
 JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694286257522	Marionette	INFO	Stopped listening on port 53149
+JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-trackingsdk-live-sg/amd/@shopee/tracking-core@7fc109b.min.js, line 1: Script terminated by timeout at:
+e.prototype.getSession/h</<@https://deo.shopeemobile.com/shopee/shopee-trackingsdk-live-sg/amd/@shopee/tracking-core@7fc109b.min.js:1:10494
+
+Dynamically enable window occlusion 1
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
