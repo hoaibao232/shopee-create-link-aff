@@ -23101,3 +23101,77 @@ JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn
 
 Dynamically enable window occlusion 1
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1694232427762	geckodriver	INFO	Listening on 127.0.0.1:53627
+1694232430474	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-gpu" "--remote-debugging-port" " ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileOGcTC7"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694232431010	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694232431095	Marionette	INFO	Listening on port 53635
+WebDriver BiDi listening on ws://127.0.0.1:53628
+Read port: 53635
+1694232433979	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:53628/devtools/browser/c5793f9c-39a4-450e-83c8-ce27d3c69f5c
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/app.1c960d30.js, line 166: ChunkLoadError: Loading chunk 9485 failed.
+(error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/9485.7f07d1d4.js)
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694232481964	Marionette	INFO	Stopped listening on port 53635
+Dynamically enable window occlusion 1
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1694233208578	geckodriver	INFO	Listening on 127.0.0.1:54067
+1694233211524	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilejTUq1h"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694233212146	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694233212214	Marionette	INFO	Listening on port 54076
+WebDriver BiDi listening on ws://127.0.0.1:54068
+Read port: 54076
+1694233212567	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:54068/devtools/browser/5f890631-0057-4149-b96a-a109229767f2
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694233246061	Marionette	INFO	Stopped listening on port 54076
+JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js, line 11: Script terminated by timeout at:
+4961/h/e.rcEndListener@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js:11:4657
+
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/translations-models sync interrupted by shutdown
+console.warn: services.settings: main/url-classifier-skip-urls sync interrupted by shutdown
+console.warn: services.settings: main/addons-manager-settings sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/devtools-compatibility-browsers getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1694233359118	geckodriver	INFO	Listening on 127.0.0.1:54227
+1694233362088	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofile4vCMhw"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694233364927	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694233365011	Marionette	INFO	Listening on port 54236
+WebDriver BiDi listening on ws://127.0.0.1:54228
+Read port: 54236
+1694233366206	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:54228/devtools/browser/c89705df-efc4-40bb-907d-4a2a21075507
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694233402268	Marionette	INFO	Stopped listening on port 54236
+Dynamically enable window occlusion 1
+console.warn: services.settings: security-state/onecrl sync interrupted by shutdown
