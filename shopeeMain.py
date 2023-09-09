@@ -37,10 +37,14 @@ import os
 
 os.environ['GH_TOKEN'] = "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"
 
+if 'driver' not in st.session_state:
+    st.session_state.driver = None
+    
 def openChrome():
+    global driver
     options = Options()
     # options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
@@ -144,7 +148,10 @@ def shopeeCookieLink(driver,urls,utmContent2):
         shortenURL = i.text
         # print(shortenURL)
     
-    shortenURL = shortenURL.split("\n")
+    if "\n" in shortenURL:
+        shortenURL = shortenURL.split("\n")
+    else:
+        shortenURL = shortenURL.split()
     
     try:
         closeBtn = driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/button');
@@ -157,11 +164,14 @@ def shopeeCookieLink(driver,urls,utmContent2):
         # driver.get("https://affiliate.shopee.vn/offer/custom_link")
         # sleep(5)
 
+
+
+
 st.set_page_config(
         page_title='Tạo Link Shopee Affiliate',
         page_icon="😍"                  
         )
-
+    
 BACKGROUND_COLOR = 'white'
 COLOR = 'black' 
 
@@ -203,8 +213,7 @@ elif ATid == "2":
     accessKey = "GVR5cejXtxeUkDzlTsqH6aJOYx9yt1Ae"
 elif ATid == "3":
     accessKey = "jZGjKwszHSHBmo-HAkq9NUmjxMJZ1mqf"
-
-
+    
 data = []
 selectedLinks = []
 # report yesterday
@@ -607,7 +616,7 @@ if button6:
 middleURL = []
 
 if button2:
-    driver = openChrome()
+    driver = st.session_state.driver
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
     sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
@@ -633,7 +642,7 @@ if button2:
             print('==============')
             k = response.headers['location']
         except:
-            k = ""
+            k = k
         
         if "https://shope.ee/an_redir?origin_link" in k:
             k = k.split('origin_link=')[1]
@@ -658,10 +667,13 @@ if button2:
             except:
                 print("ERROR ERROR")
 
+        if not ("lazada.vn" in k or "shopee.vn" in k or "tiki.vn" in k):
+            k = "https://shopee.vn"
         middleURL.append(k)
-        
+
     for k in range(0, len(middleURL), 5):
         output = "\n".join(middleURL[k:k + 5])
+        
         print(output)
         # todayDate = date.today()
         # dt = datetime.now()
@@ -685,48 +697,44 @@ if button2:
         
         if middleURL[k] != "":
             try:
-                if ("shopee" in middleURL[k]):
+                if ("shopee.vn" in middleURL[k]):
                     sleep(2)
                     print("RUT GON LINK")
                     res = shopeeCookieLink(driver,output,utmContent2)
                     print(res)
-                elif ("lazada" in middleURL[k]):
+                elif ("lazada.vn" in middleURL[k]):
                     try:
                         res = type_tiny.tinyurl.short(k)
                     except:
                         res = k
+                elif ("tiki.vn" in middleURL[k]):
+                    try:
+                        res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+                    except:
+                        res = k
                 else:
-                    res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+                    res = [";"]
             except:
                 print("Something else went wrong")
-                res = ""
+                res = []
             # if checkMGG == "MGG":
             #     try:
             #         res = type_tiny.tinyurl.short(res)
             #     except:
             #         res = res
-            if type(res) == "<class 'str'>":
-                affLinks11.append(res)
-            else:
-                affLinks11 = affLinks11 + res
+            affLinks11 = affLinks11 + res
         else:
-            res = middleURL[k]
-            if type(res) == "<class 'str'>":
-                affLinks11.append(res)
-            else:
-                affLinks11 = affLinks11 + res
+            res = middleURL[k].split()
+            affLinks11 = affLinks11 + res
     
     affLinks12 = affLinks11
-    
-    print (affLinks11)
     
     for element in affLinks11:
         cmtContent = element + "\n"
         cmtContent = cmtContent.replace("\n","  \n")
         print (cmtContent)
         str11 = str11 + cmtContent
-    
-
+            
     for x, y in zip(lines, affLinks12):
         customLinks = customLinks.replace(x, y)
 
@@ -739,7 +747,7 @@ if button2:
     with c:
         st.code(customLinks, language="csv", line_numbers=False)
         
-    driver.quit();   
+    # driver.quit();   
 
 if buttonTiny:
     type_tiny = pyshorteners.Shortener()
@@ -788,6 +796,12 @@ if buttonTiny:
     with c:
         st.code(customLinks, language="csv", line_numbers=False)
         
+if st.button("Open FireFox"):
+    st.session_state.driver = openChrome()
+
+if st.button("Close FireFox"):
+    driver = st.session_state.driver
+    driver.quit()
 
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
