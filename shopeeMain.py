@@ -45,9 +45,11 @@ def openChrome():
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
 
+    service = Service(executable_path='./geckodriver')
+
     driver = webdriver.Firefox(
         options=options,
-        service=Service(GeckoDriverManager().install()),
+        service=service,
     )
     # driver.get("https://affiliate.shopee.vn/dashboard")
     
