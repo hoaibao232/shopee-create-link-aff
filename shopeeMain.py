@@ -635,7 +635,7 @@ if button2:
         except:
             k = ""
         
-        if  "https://shope.ee/an_redir?origin_link" in k:
+        if "https://shope.ee/an_redir?origin_link" in k:
             k = k.split('origin_link=')[1]
             k = unquote(k)
             # print(k)
@@ -656,7 +656,7 @@ if button2:
                     k = k.split('&utm')[0]
                 print(k)
             except:
-                k = ""
+                print("ERROR ERROR")
 
         middleURL.append(k)
         
