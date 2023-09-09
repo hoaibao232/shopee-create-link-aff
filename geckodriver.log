@@ -23285,3 +23285,84 @@ f@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-v
 JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
 JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
 Dynamically enable window occlusion 1
+1694252794961	geckodriver	INFO	Listening on 127.0.0.1:60405
+1694252797993	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileWrpBfi"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694252798403	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694252798473	Marionette	INFO	Listening on port 60413
+WebDriver BiDi listening on ws://127.0.0.1:60406
+Read port: 60413
+1694252799691	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60406/devtools/browser/facefc40-58a8-410b-a5a4-43dad1c43877
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694252820819	Marionette	INFO	Stopped listening on port 60413
+Dynamically enable window occlusion 1
+1694261191133	geckodriver	INFO	Listening on 127.0.0.1:60941
+1694261194167	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofile8b9aCn"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694261194646	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694261194711	Marionette	INFO	Listening on port 60949
+WebDriver BiDi listening on ws://127.0.0.1:60942
+Read port: 60949
+1694261195192	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60942/devtools/browser/9bde6eff-a26c-4f44-ae6f-5a1bad92c364
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694261218329	Marionette	INFO	Stopped listening on port 60949
+JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js, line 11: Script terminated by timeout at:
+f@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js:11:4254
+4961/h/e.rcEndListener@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js:11:4745
+
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+Dynamically enable window occlusion 1
+1694261354959	geckodriver	INFO	Listening on 127.0.0.1:61040
+1694261358275	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileO4LANy"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694261361505	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694261361601	Marionette	INFO	Listening on port 61048
+WebDriver BiDi listening on ws://127.0.0.1:61041
+Read port: 61048
+1694261362887	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:61041/devtools/browser/ddc32205-51d2-41da-9eb3-06412c8d7c3a
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694261402954	geckodriver	INFO	Listening on 127.0.0.1:61144
+1694261405814	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 5" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileRBfEhc"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694261407796	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694261407866	Marionette	INFO	Listening on port 61152
+WebDriver BiDi listening on ws://127.0.0.1:61145
+Read port: 61152
+1694261409905	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:61145/devtools/browser/b166a65c-dd95-4932-a26c-7f3d8066f00d
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694261432266	Marionette	INFO	Stopped listening on port 61152
+Dynamically enable window occlusion 1

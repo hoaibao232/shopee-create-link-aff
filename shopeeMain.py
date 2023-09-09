@@ -528,19 +528,23 @@ if button6:
         k = k.replace(",","")
         # k = urlexpander.expand(k)
         # print(k)
-        try:
-            response = requests.head(k)
-            print(response.headers['location'])
-            k = response.headers['location']
-        except:
-            k = ""
-            
-        try:
-            response = requests.head(k)
-            print(response.headers['location'])
-            k = response.headers['location']
-        except:
-            k = ""
+        if ("shopee.vn" in k) or ("lazada.vn" in k) or ("tiki.vn" in k):
+            print("ok")
+        else:   
+            try:
+                response = requests.head(k)
+                print("++++++++++")
+                print(response.headers['location'])
+                k = response.headers['location']
+            except:
+                k = ""
+                
+            try:
+                response = requests.head(k)
+                print(response.headers['location'])
+                k = response.headers['location']
+            except:
+                k = ""
 
         todayDate = date.today()
         dt = datetime.now()
