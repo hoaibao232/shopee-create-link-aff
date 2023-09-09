@@ -701,12 +701,16 @@ if button2:
             #         res = type_tiny.tinyurl.short(res)
             #     except:
             #         res = res
-            # affLinks11.append(res)
-            affLinks11 = affLinks11 + res
+            if type(res) == "<class 'str'>":
+                affLinks11.append(res)
+            else:
+                affLinks11 = affLinks11 + res
         else:
             res = middleURL[k]
-            # affLinks11.append(res)
-            affLinks11 = affLinks11 + res
+            if type(res) == "<class 'str'>":
+                affLinks11.append(res)
+            else:
+                affLinks11 = affLinks11 + res
     
     affLinks12 = affLinks11
     
