@@ -23175,3 +23175,36 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: https://
 1694233402268	Marionette	INFO	Stopped listening on port 54236
 Dynamically enable window occlusion 1
 console.warn: services.settings: security-state/onecrl sync interrupted by shutdown
+1694248958163	geckodriver	INFO	Listening on 127.0.0.1:59095
+1694248961218	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilerfPHEg"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694248966608	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694248966928	Marionette	INFO	Listening on port 59103
+Read port: 59103
+WebDriver BiDi listening on ws://127.0.0.1:59096
+1694248967676	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59096/devtools/browser/289f1066-7ad0-4722-a07a-f5f2810c6586
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/app.1c960d30.js, line 166: ChunkLoadError: Loading chunk 9485 failed.
+(error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/9485.7f07d1d4.js)
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+1694249010409	Marionette	INFO	Stopped listening on port 59103
+JavaScript warning: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js, line 11: Script terminated by timeout at:
+f@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js:11:4332
+4961/h/e.rcEndListener@https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-vendors.7f792e42.js:11:4745
+
+Dynamically enable window occlusion 1

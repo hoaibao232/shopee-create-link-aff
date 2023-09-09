@@ -42,7 +42,6 @@ def openChrome():
     # options.add_experimental_option("excludeSwitches", ["enable-logging"])
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
 
