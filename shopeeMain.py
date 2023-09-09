@@ -115,7 +115,7 @@ def shopeeCookieLink(driver,urls,utmContent2):
     shortenURL = ''
 
     # for link in linkArr:
-    print(link)
+    # print(link)
     try:
         txtLink = driver.find_element(By.XPATH, '//textarea[@class="ant-input"]');
         # txtLink.click()
@@ -142,7 +142,9 @@ def shopeeCookieLink(driver,urls,utmContent2):
         
     for i in shortenLink:
         shortenURL = i.text
-        print(shortenURL)
+        # print(shortenURL)
+    
+    shortenURL = shortenURL.split("\n")
     
     try:
         closeBtn = driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/button');
@@ -161,10 +163,7 @@ st.set_page_config(
         )
 
 BACKGROUND_COLOR = 'white'
-COLOR = 'black'
-
-# with st.expander("Thông báo"):
-#     st.success("Hiện tại Shopee đang bị lỗi tạo link, nên mọi người tạm thời sử dụng các tính năng trong phần 'Tạo Link AT' nhé. Tool đã có thể tạo link cho 3 sàn Shopee, Lazada, Tiki")
+COLOR = 'black' 
 
 colu1, colu2 = st.columns(2)
 with colu1:
@@ -598,6 +597,7 @@ if button6:
         st.code(customLinks, language="csv", line_numbers=False)   
 # st.dataframe(df, use_container_width=True)
 
+middleURL = []
 
 if button2:
     driver = openChrome()
@@ -651,34 +651,39 @@ if button2:
             except:
                 k = ""
 
-        todayDate = date.today()
-        dt = datetime.now()
-        ts = round(datetime.timestamp(dt))
-        # print(ts)
-        utmContent1 = str(todayDate).replace("-", "") + str(ts)
+        middleURL.append(k)
+        
+    for k in range(0, len(middleURL), 5):
+        output = "\n".join(middleURL[k:k + 5])
+        print(output)
+        # todayDate = date.today()
+        # dt = datetime.now()
+        # ts = round(datetime.timestamp(dt))
+        # # print(ts)
+        # utmContent1 = str(todayDate).replace("-", "") + str(ts)
         if checkMGG == "MGG":
             utmContent2 = taskPeople + "MGG"
         else:
             utmContent2 = taskPeople
         # print(utmContent1)
         # print(utmContent2)
-        if "lazada" in k:
-            campaign_id = "5127144557053758578"
-        elif "tiki" in k:
-            campaign_id = "4348614231480407268"
-        elif "shopee" in k:
-            campaign_id = "4751584435713464237"
-        elif "shope.ee" in k:
-            campaign_id = "4751584435713464237"
+        # if "lazada" in k:
+        #     campaign_id = "5127144557053758578"
+        # elif "tiki" in k:
+        #     campaign_id = "4348614231480407268"
+        # elif "shopee" in k:
+        #     campaign_id = "4751584435713464237"
+        # elif "shope.ee" in k:
+        #     campaign_id = "4751584435713464237"
         
-        if k != "":
+        if middleURL[k] != "":
             try:
-                if (campaign_id == "4751584435713464237"):
+                if ("shopee" in middleURL[k]):
                     sleep(2)
                     print("RUT GON LINK")
-                    res = shopeeCookieLink(driver,k,utmContent2)
+                    res = shopeeCookieLink(driver,output,utmContent2)
                     print(res)
-                elif (campaign_id == "5127144557053758578"):
+                elif ("lazada" in middleURL[k]):
                     try:
                         res = type_tiny.tinyurl.short(k)
                     except:
@@ -693,12 +698,16 @@ if button2:
             #         res = type_tiny.tinyurl.short(res)
             #     except:
             #         res = res
-            affLinks11.append(res)
+            # affLinks11.append(res)
+            affLinks11 = affLinks11 + res
         else:
-            res = k
-            affLinks11.append(res)
+            res = middleURL[k]
+            # affLinks11.append(res)
+            affLinks11 = affLinks11 + res
     
     affLinks12 = affLinks11
+    
+    print (affLinks11)
     
     for element in affLinks11:
         cmtContent = element + "\n"
@@ -711,7 +720,6 @@ if button2:
         customLinks = customLinks.replace(x, y)
 
     print(customLinks)
-    # aXbYcZd
     
     text_to_be_copied = str11
     # pyperclip.copy(text_to_be_copied)
@@ -720,8 +728,8 @@ if button2:
     with c:
         st.code(customLinks, language="csv", line_numbers=False)
         
-    # driver.quit();
-
+    driver.quit();   
+    
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
