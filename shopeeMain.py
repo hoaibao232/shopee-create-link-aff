@@ -57,12 +57,19 @@ currentShopee = ''
 with st.expander("1.Chọn hệ điều hành của máy - Kiểm tra tài khoản Shopee đang chạy tại đây"):
     aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
     checkBtn = st.button("Check")
-    checkSystem = st.selectbox(
-    'Hệ điều hành',
-    ['MacOS', 'Windows'])  
+    # checkSystem = st.selectbox(
+    # 'Hệ điều hành',
+    # ['MacOS', 'Windows'])  
     if checkBtn:
         print("CHECKED")
-    
+
+@st.cache_resource
+def installff():
+  os.system('sbase install geckodriver')
+  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
+
+_ = installff()
+
 @st.cache_resource
 def openChrome():
     global driver
@@ -72,15 +79,15 @@ def openChrome():
     options.add_argument('--disable-gpu')
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
-    if checkSystem == "Windows":
-        drivePath = "./geckodriver.exe"
-    elif checkSystem == "MacOS":
-        drivePath = "./geckodriver"
+    # if checkSystem == "Windows":
+    #     drivePath = "./geckodriver.exe"
+    # elif checkSystem == "MacOS":
+    #     drivePath = "./geckodriver"
         
     driver = webdriver.Firefox(
         options=options,
         # service=Service(GeckoDriverManager().install()),
-        service=Service(executable_path=drivePath),
+       
         
     )
     # driver.get("https://affiliate.shopee.vn/dashboard")
