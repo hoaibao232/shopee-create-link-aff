@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 from datetime import date
 from shopeeAuth import ShopeeAffiliate, ATAffiliate
-import streamlit as st
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import pandas as pd
@@ -34,6 +33,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 import os
+import streamlit as st
 
 os.environ['GH_TOKEN'] = "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"
 
@@ -54,13 +54,16 @@ if 'shopeeId' not in st.session_state:
 
 currentShopee = ''
 
-with st.expander("Kiểm tra tài khoản Shopee đang chạy tại đây"):
+with st.expander("1.Chọn hệ điều hành của máy - Kiểm tra tài khoản Shopee đang chạy tại đây"):
     aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
     checkBtn = st.button("Check")
+    checkSystem = st.selectbox(
+    'Hệ điều hành',
+    ['MacOS', 'Windows'])  
     if checkBtn:
         print("CHECKED")
     
-
+@st.cache_resource
 def openChrome():
     global driver
     options = Options()
@@ -69,10 +72,16 @@ def openChrome():
     options.add_argument('--disable-gpu')
     # options.add_argument("--user-data-dir=C:\\Users\\nguye\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 56")
     # options.add_experimental_option("detach", True)
-
+    if checkSystem == "Windows":
+        drivePath = "./geckodriver.exe"
+    elif checkSystem == "MacOS":
+        drivePath = "./geckodriver"
+        
     driver = webdriver.Firefox(
         options=options,
-        service=Service(GeckoDriverManager().install()),
+        # service=Service(GeckoDriverManager().install()),
+        service=Service(executable_path=drivePath),
+        
     )
     # driver.get("https://affiliate.shopee.vn/dashboard")
     
@@ -325,7 +334,7 @@ with st.expander("Affiliate trung gian, dùng cho Shopee, Lazada, Tiki"):
 c = st.container()
 
 if button1:
-    driver = st.session_state.driver
+    driver = openChrome()
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
     texttt = st.empty()
     sa = ShopeeAffiliate(appid, secret)
@@ -443,7 +452,7 @@ affLinks1 = []
 commentCaption =[]
 str11 = ""
 if button3:
-    driver = st.session_state.driver
+    driver = openChrome()
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
     
     texttt = st.empty()
@@ -637,7 +646,7 @@ if button6:
 middleURL = []
 
 if button2:
-    driver = st.session_state.driver
+    driver = openChrome()
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
     sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
@@ -830,6 +839,7 @@ if closeBtn:
     driver = st.session_state.driver
     driver.quit()
     st.session_state.shopeeId = 'BROWSER ĐANG TẮT'
+    st.cache_resource.clear()
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
