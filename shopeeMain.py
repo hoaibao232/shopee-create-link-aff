@@ -37,9 +37,30 @@ import os
 
 os.environ['GH_TOKEN'] = "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"
 
+
+st.set_page_config(
+        page_title='Tạo Link Shopee Affiliate',
+        page_icon="😍"                  
+        )
+    
+BACKGROUND_COLOR = 'white'
+COLOR = 'black' 
+
+
 if 'driver' not in st.session_state:
     st.session_state.driver = None
+if 'shopeeId' not in st.session_state:
+    st.session_state.shopeeId = ''
+
+currentShopee = ''
+
+with st.expander("Kiểm tra tài khoản Shopee đang chạy tại đây"):
+    aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
+    checkBtn = st.button("Check")
+    if checkBtn:
+        print("CHECKED")
     
+
 def openChrome():
     global driver
     options = Options()
@@ -63,7 +84,14 @@ def openChrome():
         username = "nguyenthithanhdungst@gmail.com"
         password = "Hoaibao232!"
         filename = "17380760085_my_cookie.pkl"
-    
+    if appid == "17328650055":
+        username = "bichthu04@gmail.com"
+        password = "Hoaivan74203(8&5"
+        filename = "17328650055_my_cookie.pkl"
+    if appid == "17344960081":
+        username = "hoaibao2321999@gmail.com"
+        password = "thaidunGG576!@"
+        filename = "17344960081_my_cookie.pkl"
 
     driver.get("https://affiliate.shopee.vn/offer/custom_link")
     
@@ -90,9 +118,13 @@ def openChrome():
         sleep(10)
 
         pickle.dump(driver.get_cookies(), open(filename,"wb"))
+        
+        print("LOGIN DONE")
 
     except:
         print ("LOGGED")
+        
+    st.session_state.shopeeId = appid
         
     return driver
 
@@ -165,16 +197,6 @@ def shopeeCookieLink(driver,urls,utmContent2):
         # sleep(5)
 
 
-
-
-st.set_page_config(
-        page_title='Tạo Link Shopee Affiliate',
-        page_icon="😍"                  
-        )
-    
-BACKGROUND_COLOR = 'white'
-COLOR = 'black' 
-
 colu1, colu2 = st.columns(2)
 with colu1:
     taskPeople = st.selectbox(
@@ -191,7 +213,7 @@ coll1, coll2 = st.columns(2)
 with coll1:
     appid = st.selectbox(
         'Tài khoản Shopee',
-        ['17318220053', '17328650055', '17380760085'])
+        ['17318220053', '17328650055', '17380760085','17344960081'])
     # appid = st.selectbox(
     #     'Tài khoản Shopee',
     #     ['17318220053'])
@@ -206,6 +228,8 @@ elif appid == "17328650055":
     secret = "6AKO5VRGDUWBPDP5EIG7PP4E6W5VOBJL"
 elif appid == "17380760085":
     secret = "F6QVZQDUBMOI57X74Q55U5U2EJ7HYPG3"
+elif appid == "17344960081":
+    secret = ""
 
 if ATid == "1":
     accessKey = "rtFpJnRsPYs9A4edyv2UAHRQxP20Lq4A"
@@ -250,7 +274,7 @@ data = data[1:]
 
 colk1, colk2 = st.columns(2)
 with colk2:
-    number = st.number_input('Số link cần tạo:', step=1)
+    number = st.number_input('Số link cần tạo:', step=1, max_value=5)
     df = pd.DataFrame(data,columns=['Sản phẩm', 'Category', 'Link gốc', 'Shopee Link', 'Comment', 'Note'])
     # df = df.rename(columns={'0': 'San Pham', '1': 'Category','2': 'Source Link','3': 'Aff Link'})
 
@@ -263,8 +287,8 @@ with colk1:
         category)
 
 
-with st.expander("Custom Link"):  
-    customLinks = st.text_area('Điền danh sách link', '', key="text")
+with st.expander("Nhập văn bản cần tạo link"):  
+    customLinks = st.text_area('Điền danh sách link hoặc cả đoạn text', '', key="text")
 
 def clear_text():
     st.session_state["text"] = ""
@@ -272,22 +296,22 @@ def clear_text():
 df = df.loc[df['Category'] == option]
 
 
-with st.expander("Tạo Link Shopee"): 
+with st.expander("Affiliate trực tiếp với Shopee, làm mã giảm giá"): 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         button1 = st.button('Tạo Link random')
 
-    with col3:
-        button2 = st.button('Custom Link')
-        
     with col4:
-        buttonTiny = st.button('Rút gọn tiny')
+        button2 = st.button('Custom Link 👌')
+        
+    with col3:
+        buttonTiny = st.button('Rút gọn Link tiny')
 
     with col2:
         button3 = st.button('Tạo Link đã chọn')
     
     
-with st.expander("Tạo Link AT"): 
+with st.expander("Affiliate trung gian, dùng cho Shopee, Lazada, Tiki"): 
     col4, col5, col6 = st.columns(3)
     with col4:
         button4 = st.button('Tạo Link random AT')
@@ -301,8 +325,11 @@ with st.expander("Tạo Link AT"):
 c = st.container()
 
 if button1:
+    driver = st.session_state.driver
+    driver.get("https://affiliate.shopee.vn/offer/custom_link")
     texttt = st.empty()
     sa = ShopeeAffiliate(appid, secret)
+    at = ATAffiliate(accessKey)
     df = df.loc[df['Category'] == option]
     df = df.sample(n = number)
     # randomeResult = random.sample(data, number)
@@ -310,22 +337,21 @@ if button1:
     
     sourceLinks = df['Link gốc'].values
     affLinks = []
-    for x in sourceLinks:
-        print(x)
-        todayDate = date.today()
-        dt = datetime.now()
-        ts = round(datetime.timestamp(dt))
-        print(ts)
-        utmContent1 = str(todayDate).replace("-", "") + str(ts)
-        utmContent2 = taskPeople
-        print(utmContent1)
-        print(utmContent2)
-        if "lazada" in x:
-            res = ""
-        else:
-            res = sa.generateShortLink(x, utmContent1, utmContent2, option)
-        print(res)
-        affLinks.append(res)
+    
+    todayDate = date.today()
+    dt = datetime.now()
+    ts = round(datetime.timestamp(dt))
+    print(ts)
+    utmContent1 = str(todayDate).replace("-", "") + str(ts)
+    utmContent2 = taskPeople + utmContent1
+    
+    print(sourceLinks)
+    output = "\n".join(sourceLinks)
+    sleep(2)  
+    res = shopeeCookieLink(driver,output,utmContent2)
+    
+    affLinks = affLinks + res
+    print(affLinks)
         
     for i, prod in enumerate(df.index):
         df.iloc[i, 3] = affLinks[i]
@@ -398,6 +424,7 @@ if button4:
     # st.write(str1)
     st.code(str1, language="csv", line_numbers=False)
     
+    
 # select the columns you want the users to see
 gb = GridOptionsBuilder.from_dataframe(df)
 # configure selection
@@ -416,6 +443,9 @@ affLinks1 = []
 commentCaption =[]
 str11 = ""
 if button3:
+    driver = st.session_state.driver
+    driver.get("https://affiliate.shopee.vn/offer/custom_link")
+    
     texttt = st.empty()
     sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
@@ -424,31 +454,22 @@ if button3:
         cmtCapt = data['selected_rows'][index]['Comment']
         commentCaption.append(cmtCapt)
         selectedLinks.append(srcLink)
-
-    for x in selectedLinks:
-        print(x)
-        todayDate = date.today()
-        dt = datetime.now()
-        ts = round(datetime.timestamp(dt))
-        print(ts)
-        utmContent1 = str(todayDate).replace("-", "") + str(ts)
-        utmContent2 = taskPeople
-        print(utmContent1)
-        print(utmContent2)
         
-        if "lazada" in x:
-            campaign_id = "5127144557053758578"
-            res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
-        elif "tiki" in x:
-            campaign_id = "4348614231480407268"
-            res = at.generateShortLink(x, campaign_id, utmContent1, utmContent2, option)
-        elif "shopee" in x:
-            res = sa.generateShortLink(x, utmContent1, utmContent2, option)
-        print(res)
-        affLinks1.append(res)
         
-
+    todayDate = date.today()
+    dt = datetime.now()
+    ts = round(datetime.timestamp(dt))
+    print(ts)
+    utmContent1 = str(todayDate).replace("-", "") + str(ts)
+    utmContent2 = taskPeople + utmContent1
+    
+    print(selectedLinks)
+    output = "\n".join(selectedLinks)
+    sleep(2)  
+    res = shopeeCookieLink(driver,output,utmContent2)
+    affLinks1 = affLinks1 + res
     print(affLinks1)
+
     # print(df)
         
     # for i, prod in enumerate(df.index):
@@ -686,14 +707,14 @@ if button2:
             utmContent2 = taskPeople
         # print(utmContent1)
         # print(utmContent2)
-        # if "lazada" in k:
-        #     campaign_id = "5127144557053758578"
-        # elif "tiki" in k:
-        #     campaign_id = "4348614231480407268"
-        # elif "shopee" in k:
-        #     campaign_id = "4751584435713464237"
-        # elif "shope.ee" in k:
-        #     campaign_id = "4751584435713464237"
+        if "lazada" in k:
+            campaign_id = "5127144557053758578"
+        elif "tiki" in k:
+            campaign_id = "4348614231480407268"
+        elif "shopee" in k:
+            campaign_id = "4751584435713464237"
+        elif "shope.ee" in k:
+            campaign_id = "4751584435713464237"
         
         if middleURL[k] != "":
             try:
@@ -795,14 +816,20 @@ if buttonTiny:
     print (str11)
     with c:
         st.code(customLinks, language="csv", line_numbers=False)
-        
-if st.button("Open FireFox"):
-    st.session_state.driver = openChrome()
 
-if st.button("Close FireFox"):
+
+collll1, collll2 = st.columns(2)    
+with collll1:
+    openBtn = st.button("Open FireFox")
+with collll2:
+    closeBtn = st.button("Close FireFox")
+        
+if openBtn:
+    st.session_state.driver = openChrome()
+if closeBtn:
     driver = st.session_state.driver
     driver.quit()
-
+    st.session_state.shopeeId = 'BROWSER ĐANG TẮT'
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
