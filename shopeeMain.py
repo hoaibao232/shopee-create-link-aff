@@ -11,6 +11,7 @@ import re
 from urlextract import URLExtract
 # import urlexpander
 import pyshorteners
+from pyshorteners import Shortener
 import requests
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -554,6 +555,8 @@ urls = []
 lines = []
 affLinks12 = []
 if button6:
+    xShort = Shortener()
+    yShort = xShort.tinyurl
     sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
     type_tiny = pyshorteners.Shortener()
@@ -572,7 +575,7 @@ if button6:
         k = k.replace(",","")
         # k = urlexpander.expand(k)
         # print(k)
-        if ("shopee.vn" in k) or ("lazada.vn" in k) or ("tiki.vn" in k):
+        if ("https://shopee.vn" in k) or ("https://lazada.vn" in k) or ("https://tiki.vn" in k):
             print("ok")
         else:   
             try:
@@ -619,7 +622,10 @@ if button6:
                 try:
                     res = type_tiny.tinyurl.short(res)
                 except:
-                    res = res
+                    try:
+                        res = yShort.short(k)
+                    except:
+                        res = res
             affLinks11.append(res)
         else:
             res = k
@@ -785,6 +791,8 @@ if button2:
     # driver.quit();   
 
 if buttonTiny:
+    xShort = Shortener()
+    yShort = xShort.tinyurl
     type_tiny = pyshorteners.Shortener()
     extractor = URLExtract()
     lines = extractor.find_urls(customLinks)
@@ -799,10 +807,17 @@ if buttonTiny:
     for k in lines:
         if k != "":
             try:
-                res = type_tiny.tinyurl.short(k)
+                res = type_tiny.tinyurl.short(res)
             except:
-                print("Something else went wrong")
-                res = ""
+                try:
+                    res = yShort.short(k)
+                except:
+                    print("Something else went wrong")
+                    if "https://shorten.asia" in k:
+                        res = k
+                    else:
+                        res = ""
+        
             affLinks11.append(res)
         else:
             res = k
