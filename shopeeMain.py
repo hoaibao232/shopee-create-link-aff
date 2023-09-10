@@ -707,14 +707,14 @@ if button2:
             utmContent2 = taskPeople
         # print(utmContent1)
         # print(utmContent2)
-        if "lazada" in k:
-            campaign_id = "5127144557053758578"
-        elif "tiki" in k:
-            campaign_id = "4348614231480407268"
-        elif "shopee" in k:
-            campaign_id = "4751584435713464237"
-        elif "shope.ee" in k:
-            campaign_id = "4751584435713464237"
+        # if "lazada" in k:
+        #     campaign_id = "5127144557053758578"
+        # elif "tiki" in k:
+        #     campaign_id = "4348614231480407268"
+        # elif "shopee" in k:
+        #     campaign_id = "4751584435713464237"
+        # elif "shope.ee" in k:
+        #     campaign_id = "4751584435713464237"
         
         if middleURL[k] != "":
             try:
@@ -730,7 +730,7 @@ if button2:
                         res = k
                 elif ("tiki.vn" in middleURL[k]):
                     try:
-                        res = at.generateShortLink(k, campaign_id, utmContent1, utmContent2, option)
+                        res = at.generateShortLink(k, '4348614231480407268', utmContent1, utmContent2, option)
                     except:
                         res = k
                 else:
