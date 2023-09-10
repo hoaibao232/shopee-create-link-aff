@@ -54,12 +54,10 @@ if 'shopeeId' not in st.session_state:
 
 currentShopee = ''
 
-with st.expander("1.Chọn hệ điều hành của máy - Kiểm tra tài khoản Shopee đang chạy tại đây"):
+with st.expander("Kiểm tra tài khoản Shopee đang chạy tại đây"):
     aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
     checkBtn = st.button("Check")
-    # checkSystem = st.selectbox(
-    # 'Hệ điều hành',
-    # ['MacOS', 'Windows'])  
+  
     if checkBtn:
         print("CHECKED")
 
