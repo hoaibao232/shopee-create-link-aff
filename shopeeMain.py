@@ -35,6 +35,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 import os
 import streamlit as st
+from streamlit_ace import st_ace, KEYBINDINGS, LANGUAGES, THEMES
 
 os.environ['GH_TOKEN'] = "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"
 
@@ -44,8 +45,8 @@ st.set_page_config(
         page_icon="😍"                  
         )
     
-BACKGROUND_COLOR = 'white'
-COLOR = 'black' 
+# BACKGROUND_COLOR = 'white'
+# COLOR = 'black' 
 
 
 if 'driver' not in st.session_state:
@@ -55,12 +56,6 @@ if 'shopeeId' not in st.session_state:
 
 currentShopee = ''
 
-with st.expander("Kiểm tra tài khoản Shopee đang chạy tại đây"):
-    aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
-    checkBtn = st.button("Check")
-  
-    if checkBtn:
-        print("CHECKED")
 
 @st.cache_resource
 def installff():
@@ -211,6 +206,7 @@ def shopeeCookieLink(driver,urls,utmContent2):
         # driver.get("https://affiliate.shopee.vn/offer/custom_link")
         # sleep(5)
 
+abc = st.expander("Kiểm tra tài khoản Shopee đang chạy tại đây")
 
 colu1, colu2 = st.columns(2)
 with colu1:
@@ -252,7 +248,35 @@ elif ATid == "2":
     accessKey = "GVR5cejXtxeUkDzlTsqH6aJOYx9yt1Ae"
 elif ATid == "3":
     accessKey = "jZGjKwszHSHBmo-HAkq9NUmjxMJZ1mqf"
+
+
+with abc:
+    aaaa = st.success('Tài khoản Shopee bạn đang sử dụng để tạo link là {}'.format(st.session_state.shopeeId), icon="✅")
+   
     
+    collll1, collll2, cot3 = st.columns(3)   
+    with collll1:
+        checkBtn = st.button("Check") 
+    with collll2:
+        openBtn = st.button("Open FireFox")
+    with cot3:
+        closeBtn = st.button("Close FireFox")
+            
+    if openBtn:
+        st.session_state.driver = openChrome()
+    if closeBtn:
+        driver = st.session_state.driver
+        st.session_state.shopeeId = 'BROWSER ĐANG TẮT'
+        st.cache_resource.clear()
+        try:
+            driver.quit()
+        except:
+            print("DRIVER QUIT ERROR")
+  
+    if checkBtn:
+        print("CHECKED")
+        
+
 data = []
 selectedLinks = []
 # report yesterday
@@ -847,19 +871,6 @@ if buttonTiny:
         st.code(customLinks, language="csv", line_numbers=False)
 
 
-collll1, collll2 = st.columns(2)    
-with collll1:
-    openBtn = st.button("Open FireFox")
-with collll2:
-    closeBtn = st.button("Close FireFox")
-        
-if openBtn:
-    st.session_state.driver = openChrome()
-if closeBtn:
-    driver = st.session_state.driver
-    st.session_state.shopeeId = 'BROWSER ĐANG TẮT'
-    st.cache_resource.clear()
-    driver.quit()
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
@@ -900,3 +911,15 @@ if closeBtn:
 
 #     print (str11)
 #     st.code(str11, language="csv", line_numbers=False)
+
+
+st.header("Dùng để chỉnh sửa text")
+content = st_ace(
+    language='plain_text', theme='chrome',
+    key="ace",
+    font_size=14, tab_size=6,
+)
+
+if content:
+    st.subheader("Content")
+    st.code(content,language='plain_text')

@@ -25304,3 +25304,392 @@ JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/s
 (error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/2530.b5d3a675.js)
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
 JavaScript error: resource://gre/modules/PromiseWorker.sys.mjs, line 102: Error: Could not get children of file(C:\Users\nguye\AppData\Local\Temp\rust_mozprofileWZyt6K\thumbnails) because it does not exist
+1694407741189	geckodriver	INFO	Listening on 127.0.0.1:58821
+1694407744222	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofiledDeDvg"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694407751826	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694407752136	Marionette	INFO	Listening on port 58830
+WebDriver BiDi listening on ws://127.0.0.1:58822
+Read port: 58830
+Read port: 58830
+Read port: 58830
+Read port: 58830
+1694407756955	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:58822/devtools/browser/5e503acd-2cfb-4c7b-9f58-0f26510ba89c
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/pc-layout.bd3ef67c.js, line 1: TypeError: n.data is null
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://affiliate.shopee.vn."
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694408210680	geckodriver	INFO	Listening on 127.0.0.1:58987
+1694408213706	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileIEoxvI"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694408214299	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694408214370	Marionette	INFO	Listening on port 58995
+WebDriver BiDi listening on ws://127.0.0.1:58988
+Read port: 58995
+1694408215460	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:58988/devtools/browser/8e5cc164-9446-4cdf-8122-ac16b6918d53
+1694408303755	geckodriver	INFO	Listening on 127.0.0.1:59036
+1694408306771	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileL5VJy1"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694408307187	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694408307263	Marionette	INFO	Listening on port 59044
+WebDriver BiDi listening on ws://127.0.0.1:59037
+Read port: 59044
+1694408308892	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59037/devtools/browser/f0b63723-f323-47b5-acd1-650791cfd861
+1694408377169	geckodriver	INFO	Listening on 127.0.0.1:59080
+1694408380248	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilexTC6vP"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694408380672	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694408380785	Marionette	INFO	Listening on port 59088
+WebDriver BiDi listening on ws://127.0.0.1:59081
+Read port: 59088
+1694408382372	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59081/devtools/browser/d3ce66ba-538d-434a-8355-f2a649c90291
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694408423992	Marionette	INFO	Stopped listening on port 59088
+Dynamically enable window occlusion 1
+1694408441456	geckodriver	INFO	Listening on 127.0.0.1:59159
+1694408444487	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofile2wEwxr"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694408444849	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694408444920	Marionette	INFO	Listening on port 59167
+WebDriver BiDi listening on ws://127.0.0.1:59160
+Read port: 59167
+1694408445383	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59160/devtools/browser/100108d4-a196-475e-8085-1bacff8232e9
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/pc-layout.bd3ef67c.js, line 1: TypeError: n.data is null
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694408915656	Marionette	INFO	Stopped listening on port 59167
+Dynamically enable window occlusion 1
+1694409090378	geckodriver	INFO	Listening on 127.0.0.1:59319
+1694409093405	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileQeegIU"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694409095072	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694409095141	Marionette	INFO	Listening on port 59327
+WebDriver BiDi listening on ws://127.0.0.1:59320
+Read port: 59327
+Read port: 59327
+1694409097852	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59320/devtools/browser/09be3f95-a5c0-402e-8ba4-98546aa78d37
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694409139822	geckodriver	INFO	Listening on 127.0.0.1:59388
+1694409142843	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileTlULOQ"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694409143217	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694409143463	Marionette	INFO	Listening on port 59397
+WebDriver BiDi listening on ws://127.0.0.1:59389
+Read port: 59397
+1694409144085	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59389/devtools/browser/649add56-a7d7-44cf-8e4d-2ac5ab416cc6
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694409370734	Marionette	INFO	Stopped listening on port 59397
+Dynamically enable window occlusion 1
+1694411091596	geckodriver	INFO	Listening on 127.0.0.1:59546
+1694411094621	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileuEYYqz"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694411096941	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694411097015	Marionette	INFO	Listening on port 59554
+WebDriver BiDi listening on ws://127.0.0.1:59547
+Read port: 59554
+1694411098280	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59547/devtools/browser/d107d574-c155-4588-b0e0-476dbe9516ff
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/app.1c960d30.js, line 166: ChunkLoadError: Loading chunk 9833 failed.
+(error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/pc-layout.bd3ef67c.js)
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694411253039	geckodriver	INFO	Listening on 127.0.0.1:59653
+1694411256052	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileJRVCPm"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694411258097	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694411258171	Marionette	INFO	Listening on port 59661
+WebDriver BiDi listening on ws://127.0.0.1:59654
+Read port: 59661
+1694411258548	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59654/devtools/browser/b55508bf-51dd-4159-9242-97e721a7823c
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694411510110	Marionette	INFO	Stopped listening on port 59661
+Dynamically enable window occlusion 1
+1694411521006	geckodriver	INFO	Listening on 127.0.0.1:59745
+1694411524068	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileM9FvtR"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694411524630	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694411524699	Marionette	INFO	Listening on port 59754
+WebDriver BiDi listening on ws://127.0.0.1:59746
+Read port: 59754
+1694411526324	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59746/devtools/browser/165d4bb1-abb6-4fcd-874d-5bc7c27f8332
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694411866973	Marionette	INFO	Stopped listening on port 59754
+Dynamically enable window occlusion 1
+1694411896358	geckodriver	INFO	Listening on 127.0.0.1:59847
+1694411899361	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofile3pjdxz"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694411899754	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694411899824	Marionette	INFO	Listening on port 59855
+WebDriver BiDi listening on ws://127.0.0.1:59848
+Read port: 59855
+1694411900218	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59848/devtools/browser/265d8e58-894e-42c4-b849-83d5f24fe4b0
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694412388238	Marionette	INFO	Stopped listening on port 59855
+Dynamically enable window occlusion 1
+!!! error running onStopped callback: TypeError: callback is not a function
+1694412402144	geckodriver	INFO	Listening on 127.0.0.1:59948
+1694412405190	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileWlKul2"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694412405586	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694412405678	Marionette	INFO	Listening on port 59956
+WebDriver BiDi listening on ws://127.0.0.1:59949
+Read port: 59956
+1694412406881	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:59949/devtools/browser/ea497c63-5e6e-49ff-b286-77fd8516a03a
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/pc-layout.bd3ef67c.js, line 1: TypeError: n.data is null
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+JavaScript error: resource://gre/modules/LoginManagerChild.sys.mjs, line 121: NS_NOINTERFACE: Component returned failure code: 0x80004002 (NS_NOINTERFACE) [nsIWebProgress.DOMWindow]
+1694412488072	Marionette	INFO	Stopped listening on port 59956
+Dynamically enable window occlusion 1
+1694412505123	geckodriver	INFO	Listening on 127.0.0.1:60075
+1694412508147	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofile3PGQ0Y"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694412508508	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694412508679	Marionette	INFO	Listening on port 60083
+WebDriver BiDi listening on ws://127.0.0.1:60076
+Read port: 60083
+1694412509802	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60076/devtools/browser/71b1af21-06cd-4608-b9b1-c969fe6e33b1
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694412553084	Marionette	INFO	Stopped listening on port 60083
+Dynamically enable window occlusion 1
+1694412560678	geckodriver	INFO	Listening on 127.0.0.1:60148
+1694412563753	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilecrC9N2"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694412564111	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694412564181	Marionette	INFO	Listening on port 60156
+WebDriver BiDi listening on ws://127.0.0.1:60149
+Read port: 60156
+1694412564990	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60149/devtools/browser/7526ce63-80db-413b-b626-048425a92d4c
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694412803280	Marionette	INFO	Stopped listening on port 60156
+Dynamically enable window occlusion 1
+1694412811922	geckodriver	INFO	Listening on 127.0.0.1:60253
+1694412814967	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileCCULpt"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694412815328	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694412815398	Marionette	INFO	Listening on port 60261
+WebDriver BiDi listening on ws://127.0.0.1:60254
+Read port: 60261
+1694412815813	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60254/devtools/browser/8366444c-e546-4faf-9c27-6eeb3ed8ced6
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694413631499	Marionette	INFO	Stopped listening on port 60261
+Dynamically enable window occlusion 1
+1694413642596	geckodriver	INFO	Listening on 127.0.0.1:60361
+1694413645627	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofilejCR29r"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694413645985	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694413646150	Marionette	INFO	Listening on port 60369
+WebDriver BiDi listening on ws://127.0.0.1:60362
+Read port: 60369
+1694413647495	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60362/devtools/browser/ed0e17e1-2e0d-4a30-ad88-86340d238c7b
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+JavaScript error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/app.1c960d30.js, line 166: ChunkLoadError: Loading chunk 1676 failed.
+(error: https://deo.shopeemobile.com/shopee/shopee-affiliate-live-vn/static/js/chunk-antd.b050d1e7.js)
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: linkProgram: Must have a compiled fragment shader attached: Missing shader.
+JavaScript warning: https://deo.shopeemobile.com/shopee/web-sdk/js/live/1f12ef7a0af9a0fac33391eb22c3ef00f9f1900d.js, line 1: WebGL warning: uniform setter: No active linked Program.
+1694413697010	Marionette	INFO	Stopped listening on port 60369
+Dynamically enable window occlusion 1
+1694413749526	geckodriver	INFO	Listening on 127.0.0.1:60459
+1694413752561	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileU5g3Lx"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694413752920	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694413752991	Marionette	INFO	Listening on port 60467
+WebDriver BiDi listening on ws://127.0.0.1:60460
+Read port: 60467
+Read port: 60467
+Read port: 60467
+1694413755830	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60460/devtools/browser/e1c05619-f1d3-4a82-a444-e3fea588805e
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694413916853	Marionette	INFO	Stopped listening on port 60467
+Dynamically enable window occlusion 1
+1694413936954	geckodriver	INFO	Listening on 127.0.0.1:60569
+1694413939973	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileyuiITd"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694413940333	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694413940402	Marionette	INFO	Listening on port 60577
+WebDriver BiDi listening on ws://127.0.0.1:60570
+Read port: 60577
+1694413941192	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60570/devtools/browser/982298d9-33aa-4594-a150-7c5c9ea33f44
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694414118404	Marionette	INFO	Stopped listening on port 60577
+Dynamically enable window occlusion 1
+1694414128600	geckodriver	INFO	Listening on 127.0.0.1:60659
+1694414131653	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileIgW3gT"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694414132017	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694414132087	Marionette	INFO	Listening on port 60667
+Read port: 60667
+WebDriver BiDi listening on ws://127.0.0.1:60660
+1694414132646	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60660/devtools/browser/df609a96-3c3d-4c89-bb89-a9d1f69b7514
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
+1694414340215	Marionette	INFO	Stopped listening on port 60667
+Dynamically enable window occlusion 1
+1694414349870	geckodriver	INFO	Listening on 127.0.0.1:60760
+1694414352914	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--remote-debu ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\nguye\\AppData\\Local\\Temp\\rust_mozprofileY3ypxD"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1694414353418	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+1694414353487	Marionette	INFO	Listening on port 60769
+WebDriver BiDi listening on ws://127.0.0.1:60761
+Read port: 60769
+Read port: 60769
+1694414355876	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+DevTools listening on ws://127.0.0.1:60761/devtools/browser/985bdc0e-ecbc-461e-9e3b-10599acf33ee
+console.error: (new TypeError("this._searchProviderInfo is null", "resource:///modules/SearchSERPTelemetry.sys.mjs", 638))
