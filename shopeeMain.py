@@ -857,9 +857,9 @@ if openBtn:
     st.session_state.driver = openChrome()
 if closeBtn:
     driver = st.session_state.driver
-    driver.quit()
     st.session_state.shopeeId = 'BROWSER ĐANG TẮT'
     st.cache_resource.clear()
+    driver.quit()
 # if button2:
 #     sa = ShopeeAffiliate(appid, secret)
 #     at = ATAffiliate(accessKey)
