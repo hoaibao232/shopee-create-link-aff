@@ -732,8 +732,11 @@ if button2:
             except:
                 print("ERROR ERROR")
 
-        if not ("lazada.vn" in k or "shopee.vn" in k or "tiki.vn" in k):
+        if "lazada.vn" in k or "shopee.vn" in k or "tiki.vn" in k:
+            print("OKE")
+        else:
             k = "https://shopee.vn"
+            
         middleURL.append(k)
 
     for k in range(0, len(middleURL), 5):
