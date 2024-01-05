@@ -212,7 +212,7 @@ colu1, colu2 = st.columns(2)
 with colu1:
     taskPeople = st.selectbox(
         'Người làm',
-        ['BAO', 'LUT', 'VAN', 'VI'])
+        ['LUT', 'BAO', 'VAN', 'VI'])
 with colu2:
     checkMGG = st.selectbox(
         'Mã giảm giá',
@@ -224,7 +224,7 @@ coll1, coll2 = st.columns(2)
 with coll1:
     appid = st.selectbox(
         'Tài khoản Shopee',
-        ['17318220053', '17328650055', '17380760085','17344960081'])
+        ['17380760085', '17318220053', '17328650055' ,'17344960081'])
     # appid = st.selectbox(
     #     'Tài khoản Shopee',
     #     ['17318220053'])
