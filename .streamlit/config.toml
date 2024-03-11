@@ -1,2 +1,6 @@
 [theme]
 base="dark"
+
+[runner]
+# Default: true
+fastReruns = false

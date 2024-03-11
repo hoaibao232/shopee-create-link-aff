@@ -80,7 +80,7 @@ def openChrome():
         
     driver = webdriver.Firefox(
         options=options,
-        # service=Service(GeckoDriverManager().install()),
+        # service=Service('./geckodriver.exe'),
        
         
     )
@@ -581,7 +581,7 @@ affLinks12 = []
 if button6:
     xShort = Shortener()
     yShort = xShort.tinyurl
-    sa = ShopeeAffiliate(appid, secret)
+    # sa = ShopeeAffiliate(appid, secret)
     at = ATAffiliate(accessKey)
     type_tiny = pyshorteners.Shortener()
     print(customLinks)
