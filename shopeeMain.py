@@ -296,47 +296,47 @@ selectedLinks = []
 startdate = datetime.now() - timedelta(days=5)
 enddate = datetime.now() - timedelta(days=2)
 
-# Khai báo client ID và client secret key
-creds = service_account.Credentials.from_service_account_file(
-    'datdonho-8e45623262f4.json')
+# # Khai báo client ID và client secret key
+# creds = service_account.Credentials.from_service_account_file(
+#     'datdonho-8e45623262f4.json')
 
-# Xác thực và đăng nhập vào tài khoản Google
-service = build('sheets', 'v4', credentials=creds)
+# # Xác thực và đăng nhập vào tài khoản Google
+# service = build('sheets', 'v4', credentials=creds)
 
-# Truy cập vào một bảng tính cụ thể
-spreadsheet_id = '10eXnT79-Ng2SaP3lgASSiMv_w6F7WqjCa28178Kv5aY'
-sheet_name = 'Quản lý Link'
-# range_name = f'{sheet_name}!A1:B5'
-range_name = 'Quản lý Link'
+# # Truy cập vào một bảng tính cụ thể
+# spreadsheet_id = '10eXnT79-Ng2SaP3lgASSiMv_w6F7WqjCa28178Kv5aY'
+# sheet_name = 'Quản lý Link'
+# # range_name = f'{sheet_name}!A1:B5'
+# range_name = 'Quản lý Link'
 
-# Lấy dữ liệu từ bảng tính
-result = service.spreadsheets().values().get(
-    spreadsheetId=spreadsheet_id, range=range_name).execute()
+# # Lấy dữ liệu từ bảng tính
+# result = service.spreadsheets().values().get(
+#     spreadsheetId=spreadsheet_id, range=range_name).execute()
 
-# In ra các giá trị trong bảng tính
-for row in result.get('values', []):
-    data.append(row)
+# # In ra các giá trị trong bảng tính
+# for row in result.get('values', []):
+#     data.append(row)
 
-data = data[1:]
+# data = data[1:]
 
 # sa1 = ShopeeAffiliate(appid, secret)
 # res1 = sa1.report(startdate, enddate)
 # conversion, estimation, startdate_, enddate_ = res1
 # st.write("Doanh thu uoc tinh:", estimation)
 
-colk1, colk2 = st.columns(2)
-with colk2:
-    number = st.number_input('Số link cần tạo:', step=1, max_value=5)
-    df = pd.DataFrame(data,columns=['Sản phẩm', 'Category', 'Link gốc', 'Shopee Link', 'Comment', 'Note'])
-    # df = df.rename(columns={'0': 'San Pham', '1': 'Category','2': 'Source Link','3': 'Aff Link'})
+# colk1, colk2 = st.columns(2)
+# with colk2:
+#     number = st.number_input('Số link cần tạo:', step=1, max_value=5)
+#     df = pd.DataFrame(data,columns=['Sản phẩm', 'Category', 'Link gốc', 'Shopee Link', 'Comment', 'Note'])
+#     # df = df.rename(columns={'0': 'San Pham', '1': 'Category','2': 'Source Link','3': 'Aff Link'})
 
-category = df['Category'].values
-category=[*set(category)]
+# category = df['Category'].values
+# category=[*set(category)]
 
-with colk1:
-    option = st.selectbox(
-        'Chọn loại sản phẩm',
-        category)
+# with colk1:
+#     option = st.selectbox(
+#         'Chọn loại sản phẩm',
+#         category)
 
 
 with st.expander("Nhập văn bản cần tạo link"):  
