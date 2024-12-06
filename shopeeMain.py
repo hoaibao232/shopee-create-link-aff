@@ -163,46 +163,59 @@ def shopeeCookieLink(driver,urls,utmContent2):
     # for link in linkArr:
     # print(link)
     try:
-        txtLink = driver.find_element(By.XPATH, '//textarea[@class="ant-input"]');
-        # txtLink.click()
+        # Đợi tối đa 30 giây để element xuất hiện
+        txtLink = WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.XPATH, '//textarea[@class="ant-input"]'))
+        )
         txtLink.clear()
         txtLink.send_keys(link)
+
+        try:
+            subId1 = driver.find_element(By.ID, 'customLink_sub_id1');
+            # subId1.click()
+            subId1.clear()
+            subId1.send_keys(utmContent2)
+        except:
+            print("ERROR 2")
+
+        try:
+            submitBtn = driver.find_element(By.XPATH, '//button[@type="submit"]');
+            submitBtn.click()
+            sleep(3)
+            shortenLink = driver.find_elements(By.XPATH,'//textarea[@class="ant-input ant-input-disabled"]')
+        except:
+            print("ERROR 3")
+            
+        for i in shortenLink:
+            shortenURL = i.text
+            print(shortenURL)
+        
+        if "\n" in shortenURL:
+            shortenURL = shortenURL.split("\n")
+        else:
+            shortenURL = shortenURL.split()
+        
+        try:
+            closeBtn = driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/button');
+            closeBtn.click()
+        except:
+            try:
+                closeBtn = driver.find_element(By.XPATH, '//button[@aria-label="Close"]');
+                closeBtn.click()
+            except:
+                try:
+                    closeBtn = driver.find_element(By.XPATH, '/html/body/div[3]/div/div[2]/div/div[2]/button');
+                    closeBtn.click()
+                except:
+                    closeBtn = driver.find_element(By.XPATH, '/html/body/div[6]/div/div[2]/div/div[2]/button');
+                    closeBtn.click()
+
+        return shortenURL
     except:
         print("ERROR 1 ")
+        return ['Có lỗi xảy ra!']
     
-    try:
-        subId1 = driver.find_element(By.ID, 'customLink_sub_id1');
-        # subId1.click()
-        subId1.clear()
-        subId1.send_keys(utmContent2)
-    except:
-        print("ERROR 2")
-
-    try:
-        submitBtn = driver.find_element(By.XPATH, '//button[@type="submit"]');
-        submitBtn.click()
-        sleep(3)
-        shortenLink = driver.find_elements(By.XPATH,'//textarea[@class="ant-input ant-input-disabled"]')
-    except:
-        print("ERROR 3")
-        
-    for i in shortenLink:
-        shortenURL = i.text
-        # print(shortenURL)
     
-    if "\n" in shortenURL:
-        shortenURL = shortenURL.split("\n")
-    else:
-        shortenURL = shortenURL.split()
-    
-    try:
-        closeBtn = driver.find_element(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/button');
-        closeBtn.click()
-    except:
-        closeBtn = driver.find_element(By.XPATH, '/html/body/div[3]/div/div[2]/div/div[2]/button');
-        closeBtn.click()
-
-    return shortenURL
         # driver.get("https://affiliate.shopee.vn/offer/custom_link")
         # sleep(5)
 
@@ -732,10 +745,15 @@ if button2:
             except:
                 print("ERROR ERROR")
 
+        if "games.shopee.vn" in k:
+            k = "https://shopee.vn"
+
         if "lazada.vn" in k or "shopee.vn" in k or "tiki.vn" in k:
             print("OKE")
         else:
             k = "https://shopee.vn"
+
+       
             
         middleURL.append(k)
 
